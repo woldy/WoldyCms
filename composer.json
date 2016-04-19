@@ -1,6 +1,9 @@
 {
     "name": "woldy/cms",
     "description": "a newbility cms framework for larvael",
+    "license":"MIT",
+    "keywords":["cms"],
+    "version":"1.0.0",
     "authors": [
         {
             "name": "woldy",
