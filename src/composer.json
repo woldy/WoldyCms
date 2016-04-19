@@ -1,0 +1,14 @@
+{
+    "name": "woldy/cms",
+    "description": "a newbility cms for larvael",
+    "authors": [
+        {
+            "name": "woldy",
+            "email": "king@woldy.net"
+        }
+    ],
+	"psr-4": {
+        "Woldy\\Cms\\": "src/"
+    }
+    "require": {}
+}
