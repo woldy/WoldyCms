@@ -1,14 +1,17 @@
 {
     "name": "woldy/cms",
-    "description": "a newbility cms for larvael",
+    "description": "a newbility cms framework for larvael",
     "authors": [
         {
             "name": "woldy",
             "email": "king@woldy.net"
         }
     ],
-	"psr-4": {
-        "Woldy\\Cms\\": "src/"
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Yuansir\\Toastr\\": "src/"
+        }
     }
-    "require": {}
 }
+ 
