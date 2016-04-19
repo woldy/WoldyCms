@@ -7,8 +7,10 @@
             "email": "king@woldy.net"
         }
     ],
-	"psr-4": {
-        "Woldy\\Cms\\": "src/"
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Yuansir\\Toastr\\": "src/"
+        }
     }
-    "require": {}
 }
