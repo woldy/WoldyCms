@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Yuansir\\Toastr\\": "src/"
+            "Woldy\\Cms\\": "src/"
         }
     }
 }
