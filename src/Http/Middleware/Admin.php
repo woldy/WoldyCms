@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Basic\Middleware;
+namespace Woldy\Cms\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;

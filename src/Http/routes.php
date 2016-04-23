@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-//Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Basic\Middleware\Admin'], function() {
+//Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Http\Middleware\Admin'], function() {
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/', function(){
 		return Redirect::to('admin/index');

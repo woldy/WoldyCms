@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Woldy\\Cms\\Basic\\Controllers\\' => array($baseDir . '/src/Baisc/Controllers'),
+    'Woldy\\Cms\\Http\\Controllers\\' => array($baseDir . '/src/Baisc/Controllers'),
     'Woldy\\Cms\\Baisc\\Controllers\\Admin\\' => array($baseDir . '/src/Baisc/Controllers/Admin'),
     'Woldy\\Cms\\' => array($baseDir . '/src'),
 );

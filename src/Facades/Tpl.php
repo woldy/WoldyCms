@@ -3,10 +3,10 @@ namespace Woldy\CMS\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Test extends Facade
+class Tpl extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'test';
+        return 'tpl';
     }
 }

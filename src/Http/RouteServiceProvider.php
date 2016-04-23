@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Basic;
+namespace Woldy\Cms\Http;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = '\Woldy\Cms\Basic\Controllers';
+    protected $namespace = '\Woldy\Cms\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes($router);
 
         // echo "test";
-        // $a=new \Woldy\Cms\Basic\Controllers\Admin\IndexController();
+        // $a=new \Woldy\Cms\Http\Controllers\Admin\IndexController();
         // exit;
 
         //

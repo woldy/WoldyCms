@@ -1,16 +1,15 @@
 <?php
-namespace Woldy\Cms\Basic\Controllers\Admin;
+namespace Woldy\Cms\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Woldy\Cms\Basic\Controllers\Controller;
-
+use Woldy\Cms\Http\Controllers\Controller;
+use Tpl;
 class IndexController extends Controller
 {
     public function getIndex(){
-    	echo "xxsss";
-
-    	return view("woldycms::test");
+    	return Tpl::admin('index.index');
+    	//return view("woldycms::admin.admin");
     }
 
     public static function test(){
