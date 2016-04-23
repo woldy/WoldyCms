@@ -1,26 +1,28 @@
 <?php
-namespace Woldy\Cms;
-namespace App\Http;
+namespace Woldy\Cms\Basic\Middleware;
 use Closure;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
 
-class Test implements Middleware{
-	public static function test(){
-		echo "test\n";
-	}
-
-	    /**
+class Admin
+{
+    /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param string|null              $guard
+     *
      * @return mixed
      */
+    private $socialite;
+    private $auth;
+    private $users;
+
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->guest()) {
-            if ($request->ajax() || $request->wantsJson()) {
+            if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
                 return redirect()->guest('login');
@@ -29,4 +31,4 @@ class Test implements Middleware{
 
         return $next($request);
     }
-} 
+}

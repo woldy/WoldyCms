@@ -1,10 +1,9 @@
 <?php
-namespace Woldy\Cms;
-namespace App\Http;
+namespace Woldy\Cms\Basic\Controllers\Admin;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class Test implements Middleware{
+class Test3 implements Middleware{
 	public static function test(){
 		echo "test\n";
 	}
