@@ -4,6 +4,7 @@ use Illuminate\Config\Repository;
 class Tpl{
 
 	static $config;
+	static $version=0;
 
 	public function __construct(Repository $config){
 		self::$config = $config;
@@ -17,13 +18,21 @@ class Tpl{
 	public static function getcss(){
 
 	}
-	public static function admin($tpl,$val=array()){
-		$admin_tpl=self::$config->get('tpl.admin_tpl');
+	public static function admin($tpl,$val=array()){		
 		$val['template']=$tpl;
-		$val['version']='0';
-		$val['static_url']=self::$config->get('tpl.static_url');
-		$val['common_css']=self::$config->get('tpl.common_css');
+		$val['version']=self::$version;
+		$admincfg=self::$config->get('tpl.admin_cfg');
+		$admin_tpl=$admincfg['admin_tpl'];
+		$val['static_url']=$admincfg['static_url']; //静态资源引用地址
+		$val['common_css']=$admincfg['common_css']; //公共css样式
+		$val['common_js']=$admincfg['common_js']; //公共js脚本
 	    return view($admin_tpl,$val);	  	
+	}
+
+	public static function getconf(){
+		
+
+		
 	}
 
 
