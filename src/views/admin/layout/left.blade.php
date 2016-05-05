@@ -1,10 +1,17 @@
 @include('woldycms::admin.common.header')
-	<div class="page-container">
-		@include('woldycms::admin.common.menu')
-		<div class="main-content">
-			@include('woldycms::admin.common.title')
-			@include('woldycms::admin.'.$template)
-			@include('woldycms::admin.common.footer')
+@include('woldycms::admin.common.setting')
+	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
+		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
+		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
+		<div class="sidebar-menu toggle-others fixed">
+			@include('woldycms::admin.common.sidebar')	
 		</div>
+		<div class="main-content">	
+			@include('woldycms::admin.common.nav')
+			@include($template)	
+			@include('woldycms::admin.common.footer')	
+		</div>
+		{{--@include('woldycms::admin.common.chat')--}}
 	</div>
-@include('woldycms::admin.common.bottom')
+@include('woldycms::admin.common.bottom')		

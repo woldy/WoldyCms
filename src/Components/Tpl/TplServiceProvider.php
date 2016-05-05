@@ -1,6 +1,6 @@
 <?php
 
-namespace Woldy\Cms\FE;
+namespace Woldy\Cms\Components\Tpl;
 
 use Illuminate\Support\ServiceProvider;
 

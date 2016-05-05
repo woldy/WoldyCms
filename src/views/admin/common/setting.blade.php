@@ -14,7 +14,7 @@
 						
 						<div class="user-image">
 							<a href="extra-profile.html">
-								<img src="assets/images/user-2.png" class="img-responsive img-circle" />
+								<img src="/assets/images/user-2.png" class="img-responsive img-circle" />
 							</a>
 						</div>
 						

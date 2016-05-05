@@ -9,20 +9,12 @@
     <meta name="description" content="" />
     <meta name="author" content="woldy" />
     
-    <title>Xenon - Layouts</title>
+    <title>@yield('title','默认标题')</title>
 
-    <link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
-    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
-    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/xenon-core.css">
-    <link rel="stylesheet" href="assets/css/xenon-forms.css">
-    <link rel="stylesheet" href="assets/css/xenon-components.css">
-    <link rel="stylesheet" href="assets/css/xenon-skins.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
-
+    @foreach ($common_css as $css)
+        <link rel="stylesheet" href="{{$static_url}}{{$css}}?ver={{$version}}">
+    @endforeach
+    <script src="/assets/js/common/jquery-1.11.1.min.js?ver=0"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

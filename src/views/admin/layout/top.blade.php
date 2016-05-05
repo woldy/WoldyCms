@@ -1,10 +1,11 @@
 @include('woldycms::admin.common.header')
-	<div class="page-container">
-		@include('woldycms::admin.common.menu')
+@include('woldycms::admin.common.setting')
+@include('woldycms::admin.common.top')
+	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 		<div class="main-content">
-			@include('woldycms::admin.common.title')
-			@include('woldycms::admin.'.$template)
+			@include($template)	
 			@include('woldycms::admin.common.footer')
 		</div>
+		@include('woldycms::admin.common.chat')	
 	</div>
 @include('woldycms::admin.common.bottom')
