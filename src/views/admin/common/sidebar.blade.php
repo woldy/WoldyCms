@@ -40,7 +40,7 @@
                     <!-- add class "multiple-expanded" to allow multiple submenus to open -->
                     <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
                     <?php
-                        Menu::show();
+                        echo Menu::show_list('0');
                     ?>
 
                 </ul>

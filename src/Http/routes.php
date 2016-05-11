@@ -25,4 +25,5 @@ Route::group(['prefix' => 'admin'], function() {
 		return Redirect::to('admin/index');
 	});
 	Route::controller('/index', 'Admin\IndexController');
+	Route::controller('/menu', 'Admin\MenuController');
 });

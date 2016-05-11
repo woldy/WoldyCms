@@ -8,7 +8,8 @@
 			@include('woldycms::admin.common.sidebar')	
 		</div>
 		<div class="main-content">
-			@include('woldycms::admin.common.nav')	
+			@include('woldycms::admin.common.utop')	
+			@include('woldycms::admin.common.nav')
 			@include($template)	
 			@include('woldycms::admin.common.footer')	
 		</div>
