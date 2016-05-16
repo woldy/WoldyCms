@@ -8,10 +8,16 @@ use Woldy\Cms\Components\Form\Element\Misc;
 use DB;
 use Request;
 class Form{
+    private $js_list=[];
+    private $css_list=[];
+    private $code_list=[];
+    private $config_tpl=[
+        'attr'=>[
+            'id'=>'',
+        ]
+    ]
 
-    private
-
-	private static $Native=["area","text","password","email","file","textarea","select","checkbox","radio","switch"];
+	private  $Native=["area","text","password","email","file","textarea","select","checkbox","radio","switch"];
 
     public function buildForm($config=''){
     	$config=[
@@ -22,31 +28,18 @@ class Form{
         return '';
     }
 
+    private function form(){
+        private $config_tpl=[
+            'action'=>'',
+            'mothod'=>''
+        ]
+    }
 
-    public static  function buildElement($type,$config){
-    	if(in_array($type,self::$Native)){
-    		echo call_user_func_array('Woldy\Cms\Components\Form\Element\Native::get'.$type,$config);
-    	}
+    private function text(){
+
+        return $this;
     }
 
 
-    public function testconfig(){
-    	//type=>["area","text","password","email","file","textarea","select","checkbox","radio","switch"]
-     	$config=[
-     		"url"=>"",
-     		"action"=>"",
-     		"item"=>[
-     			[
-     				"type"=>"textbox",
-     				"name"=>"",
-     				"placeholder"=>"",
-     				"class"=>"",
-     				"size"=>"",
-     				"grid"=>"",
-     				"validate"
 
-     			],
-     		]
-    	];   	
-    }
 }
