@@ -8,6 +8,9 @@ use Woldy\Cms\Components\Form\Element\Misc;
 use DB;
 use Request;
 class Form{
+
+    private
+
 	private static $Native=["area","text","password","email","file","textarea","select","checkbox","radio","switch"];
 
     public function buildForm($config=''){
