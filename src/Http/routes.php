@@ -20,6 +20,20 @@ Route::get('/', function () {
 
 
 //Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Http\Middleware\Admin'], function() {
+//
+Route::get('/', function(){
+	return Redirect::to('index/index');
+});
+
+
+Route::group(['prefix' => 'index'], function() {
+	Route::get('/', function(){
+		return Redirect::to('index/index');
+	});
+	Route::controller('/index', 'Portal\IndexController');
+});
+
+
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/', function(){
 		return Redirect::to('admin/index');

@@ -29,7 +29,7 @@
 			</div>			
 		</div>
 	</div>
-<link rel="stylesheet" href="/assets/css/admin/menu.edit.css">
+<link rel="stylesheet" href="/assets/css/portal/menu.edit.css">
 <link rel="stylesheet" href="/assets/css/xenon-components.css">
 <link rel="stylesheet" href="/assets/js/woldycms/xenon/uikit/uikit.css">
 <script src="/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>
@@ -77,7 +77,7 @@ function iterateList(items, depth){
 function sortMenu(str){
 	$.ajax({
   		type: 'POST',
-  		url: '/admin/menu/sort',
+  		url: '/portal/menu/sort',
   		data: {
   			sortstr:str
   		},
@@ -104,7 +104,7 @@ function itemclick(){
 function getitem(id){
 	$.ajax({
   		type: 'GET',
-  		url: '/admin/menu/item',
+  		url: '/portal/menu/item',
   		data: {
   			id:id
   		},

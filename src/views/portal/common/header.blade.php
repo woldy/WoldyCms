@@ -21,6 +21,6 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    @include('woldycms::admin.common.css')
+    @include('woldycms::portal.common.css')
 </head>
 <body class="page-body">

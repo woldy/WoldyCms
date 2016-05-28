@@ -15,11 +15,11 @@ class Menu{
     ];
 
 	public static function show_list($type=0){
-		return self::get_menu_show_list();
+		return self::get_menu_show_list($type);
 	}
 
     public static function edit_list($type=0){
-        return self::get_menu_edit_list();
+        return self::get_menu_edit_list($type);
     }
 
 
@@ -92,6 +92,7 @@ class Menu{
     	if(empty($tree)){
              $urlpath='/'.urldecode(Request::path()); //高亮当前菜单
              $treepath=DB::table(self::$menu_table)
+             ->where('type',$type)
             ->where('url',$urlpath)
             ->pluck('path');
  
