@@ -15,7 +15,7 @@
 				
 				<script type="text/javascript">
 				// Here is just a sample how to open chat conversation box
-				jQuery(document).ready(function($)
+				$(document).ready(function($)
 				{
 					var $chat_conversation = $(".chat-conversation");
 					

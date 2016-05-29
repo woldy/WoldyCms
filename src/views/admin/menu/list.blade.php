@@ -1,3 +1,5 @@
+@extends('woldycms::admin.layout.left')
+@section('content')
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="panel panel-default">
@@ -29,12 +31,12 @@
 			</div>			
 		</div>
 	</div>
-<link rel="stylesheet" href="/assets/css/admin/menu.edit.css">
-<link rel="stylesheet" href="/assets/css/xenon-components.css">
-<link rel="stylesheet" href="/assets/js/woldycms/xenon/uikit/uikit.css">
-<script src="/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>
-<script src="/assets/js/woldycms/xenon/uikit/js/addons/nestable.min.js"></script>
-<script src="/assets/js/woldycms/xenon/jquery-validate/jquery.validate.min.js"></script>
+<link rel="stylesheet" href="{{$static_base}}/assets/css/admin/menu.edit.css">
+<link rel="stylesheet" href="{{$static_base}}/assets/css/xenon-components.css">
+<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon/uikit/uikit.css">
+<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>
+<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/addons/nestable.min.js"></script>
+<script src="{{$static_base}}/assets/js/woldycms/xenon/jquery-validate/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -79,7 +81,8 @@ function sortMenu(str){
   		type: 'POST',
   		url: '/admin/menu/sort',
   		data: {
-  			sortstr:str
+  			sortstr:str,
+  			'_token':"<?php echo csrf_token(); ?>",
   		},
   		success: function(data){
   			console.log('sorted');
@@ -106,7 +109,8 @@ function getitem(id){
   		type: 'GET',
   		url: '/admin/menu/item',
   		data: {
-  			id:id
+  			id:id,
+  			'_token':"<?php echo csrf_token(); ?>",
   		},
   		success: function(data){
   			$("#id").val(data.id);
@@ -117,7 +121,5 @@ function getitem(id){
   			$("#submit").html("修改");  		}
 	});
 }
-
-
-
 </script>
+@stop

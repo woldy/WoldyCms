@@ -19,7 +19,7 @@ class Tpl{
 		$config=self::getconf('admin_cfg');
 		$val['template']=$config['tpl_base'].'.'.$tpl;
 		$val=array_merge($val,$config);
-		$layout=$config['tpl_admin'].'.'.$config['tpl_layout'];
+		$layout=$config['tpl_base'].'.'.$tpl;
 	    return view($layout,$val);	  	
 	}
 
@@ -29,7 +29,7 @@ class Tpl{
 		$config=self::getconf('portal_cfg');
 		$val['template']=$config['tpl_base'].'.'.$tpl;
 		$val=array_merge($val,$config);
-		$layout=$config['tpl_portal'].'.'.$config['tpl_layout'];
+		$layout=$config['tpl_base'].'.'.$tpl;
 	    return view($layout,$val);	  	
 	}
 

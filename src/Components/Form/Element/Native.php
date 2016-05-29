@@ -26,10 +26,12 @@ class Native{
 	 * @return   [type]                   [description]
 	 */
 	public static function endform(){
+		$token=csrf_token();
 		$html="
+		<input type=\"hidden\" name=\"_token\" value=\"{$token}\">
 	</form>
 </div>";
-		return $html;		
+		return $html;
 	}
 
 	/**

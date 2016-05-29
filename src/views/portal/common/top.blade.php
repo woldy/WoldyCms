@@ -5,8 +5,8 @@
 			<!-- Navbar Brand -->
 			<div class="navbar-brand">
 				<a href="dashboard-1.html" class="logo">
-					<img src="/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
-					<img src="/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
+					<img src="{{$static_base}}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
+					<img src="{{$static_base}}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 				</a>
 				<a href="#" data-toggle="settings-pane" data-animate="true">
 					<i class="linecons-cog"></i>
@@ -856,7 +856,7 @@
 		
 				<li class="dropdown user-profile">
 					<a href="#" data-toggle="dropdown">
-						<img src="/assets/images/user-1.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
+						<img src="{{$static_base}}/assets/images/user-1.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 						<span>
 							Arlind Nushi
 							<i class="fa-angle-down"></i>

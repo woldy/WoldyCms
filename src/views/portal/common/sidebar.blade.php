@@ -6,11 +6,11 @@
                     <!-- logo -->
                     <div class="logo">
                         <a href="dashboard-1.html" class="logo-expanded">
-                            <img src="/assets/images/logo@2x.png" width="120" alt="" />
+                            <img src="@yield('title',$static_base.'/assets/images/logo@2x.png')" width="120" alt="" />
                         </a>
                         
                         <a href="dashboard-1.html" class="logo-collapsed">
-                            <img src="/assets/images/logo-collapsed@2x.png" width="40" alt="" />
+                            <img src="@yield('title',$static_base.'/assets/images/logo-collapsed@2x.png')" width="40" alt="" />
                         </a>
                     </div>
                     

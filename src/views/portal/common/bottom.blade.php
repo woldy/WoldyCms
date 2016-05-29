@@ -3,7 +3,7 @@
     </div>
  
     @foreach ($common_js as $js)
-    <script src="{{$static_url}}{{$js}}?ver={{$version}}"></script>
+    <script src="{{$static_base}}{{$js}}?ver={{$version}}"></script>
     @endforeach
 
 

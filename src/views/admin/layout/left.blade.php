@@ -10,7 +10,9 @@
 		<div class="main-content">	
 			@include('woldycms::admin.common.utop')
 			@include('woldycms::admin.common.nav')
-			@include($template)	
+		 	@section('content')
+    			<h1>default content</h1>
+			@show
 			@include('woldycms::admin.common.footer')	
 		</div>
 		{{--@include('woldycms::admin.common.chat')--}}
