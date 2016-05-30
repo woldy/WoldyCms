@@ -6,12 +6,13 @@ use App\Http\Requests;
 use Woldy\Cms\Http\Controllers\Controller;
 use Woldy\Cms\Models\MenuModel;
 use Redirect;
+use Menu;
 use Tpl;
 use Form;
 
 class MenuController extends Controller
 {
-    public function getList(){
+    public function getList($type){
 //private $Native=["area","text","password","email","file","textarea","select","checkbox","radio","switch"];
     	$config=[
     		[
@@ -103,11 +104,14 @@ class MenuController extends Controller
         ];
 
         $listform=Form::build($config);
-
+ 
     	//Form::init($cfgform)->show();
     	//$form->show();
     	//Menu::show();
-    	return Tpl::admin('menu.list',['listform'=>$listform]);
+    	return Tpl::admin('menu.list',[
+            'listform'=>$listform,
+            'menu_html'=>Menu::edit_list(intval($type))
+        ]);
     }
 
 

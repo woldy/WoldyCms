@@ -4,9 +4,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Input;
 use Request;
 
-class MenuModel extends Model
+class ModelsModel extends Model
 {
-    protected $table = 'wcms_menu';
+    protected $table = 'wcms_models';
     public $timestamps = false;
 }
 

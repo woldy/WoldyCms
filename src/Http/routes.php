@@ -11,7 +11,6 @@ Route::get('/', function(){
 
 Route::get('/font/{font}','Woldy\ResController@font');
 Route::get('/fonts/{font}','Woldy\ResController@font');
-
 Route::get('/res', 'Woldy\ResController@res');
 
 
@@ -29,4 +28,5 @@ Route::group(['prefix' => 'admin'], function() {
 	});
 	Route::controller('/index', 'Admin\IndexController');
 	Route::controller('/menu', 'Admin\MenuController');
+	Route::controller('/model', 'Admin\ModelController');
 });

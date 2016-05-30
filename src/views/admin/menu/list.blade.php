@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<ul id="menu_edit_list" class="uk-nestable" data-uk-nestable>
-                    			<?php echo Menu::edit_list(intval($_GET['type'])); ?>
+                    			{!!$menu_html!!}
 							</ul>
 						</div>
  
