@@ -8,6 +8,7 @@ class ModelsModel extends Model
 {
     protected $table = 'wcms_models';
     public $timestamps = false;
+
 }
 
  

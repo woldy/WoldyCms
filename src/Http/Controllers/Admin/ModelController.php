@@ -40,4 +40,9 @@ class ModelController extends Controller
     	return Tpl::admin('model.list',['list'=>$list]);
     }
 
+    public function edit($table){
+    	$columns=DB::select("show COLUMNS from $table");
+    	dd($columns);
+
+    }
 }

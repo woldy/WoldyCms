@@ -28,5 +28,7 @@ Route::group(['prefix' => 'admin'], function() {
 	});
 	Route::controller('/index', 'Admin\IndexController');
 	Route::controller('/menu', 'Admin\MenuController');
+	
+	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
 	Route::controller('/model', 'Admin\ModelController');
 });

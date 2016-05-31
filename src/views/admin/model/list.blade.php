@@ -48,7 +48,7 @@
 											<td>{{$item['table']}}</td>
 											<td>{{$item['alias']}}</td>
 											<td></td>
-											<td><a href="">编辑</a></td>
+											<td><a href="">数据列表</a>&nbsp;|&nbsp;<a href="/admin/model/edit/{{$item['table']}}">模型编辑</a></td>
 										</tr>
 									@endforeach										
 									</tbody>
