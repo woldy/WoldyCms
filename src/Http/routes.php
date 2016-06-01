@@ -32,3 +32,4 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
 	Route::controller('/model', 'Admin\ModelController');
 });
+

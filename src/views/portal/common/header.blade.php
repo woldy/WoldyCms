@@ -19,18 +19,13 @@
     @foreach ($common_css as $css)
         <link rel="stylesheet" href="{{$static_base}}{{$css}}?ver={{$version}}">
     @endforeach
-        <script src="{{$static_base}}/assets/js/woldycms/common/jquery-1.11.1.min.js?ver=0"></script>
+        <script src="{{$static_base}}/assets/js/woldycms/common/jquery-1.11.1.min.js?ver={{$version}}"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <?php
-        var_dump(Request::path());
-        exit();
-    ?>
-    
-    @include('woldycms::portal.common.css')
+     <link rel="stylesheet" href="{{$static_base}}{{$static['css']}}?ver={{$version}}">
+     <script src="{{$static_base}}{{$static['js']}}?ver={{$version}}"></script>
 </head>
 <body class="page-body">

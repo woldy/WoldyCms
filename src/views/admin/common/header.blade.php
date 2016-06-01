@@ -21,6 +21,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    @include('woldycms::admin.common.css')
+     <link rel="stylesheet" href="{{$static_base}}{{$static['css']}}?ver={{$version}}">
+     <script src="{{$static_base}}{{$static['js']}}?ver={{$version}}"></script>
 </head>
 <body class="page-body">

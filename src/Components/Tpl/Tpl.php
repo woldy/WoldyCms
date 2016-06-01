@@ -17,7 +17,10 @@ class Tpl{
 	public static function admin($tpl,$val=array()){
 		$val['version']=self::$version;
 		$config=self::getconf('admin_cfg');
-		$val['template']=$config['tpl_base'].'.'.$tpl;
+		$val['static']=[
+			'css'=>'/assets/css/admin/'.str_replace('.', '/', $tpl).'.css',
+			'js'=>'/assets/js/admin/'.str_replace('.', '/', $tpl).'.js'
+		];
 		$val=array_merge($val,$config);
 		$layout=$config['tpl_base'].'.'.$tpl;
 	    return view($layout,$val);	  	
@@ -27,7 +30,10 @@ class Tpl{
 	public static function portal($tpl,$val=array()){
 		$val['version']=self::$version;
 		$config=self::getconf('portal_cfg');
-		$val['template']=$config['tpl_base'].'.'.$tpl;
+		$val['static']=[
+			'css'=>'/assets/css/portal/'.str_replace('.', '/', $tpl).'.css',
+			'js'=>'/assets/js/portal/'.str_replace('.', '/', $tpl).'.js'
+		];
 		$val=array_merge($val,$config);
 		$layout=$config['tpl_base'].'.'.$tpl;
 	    return view($layout,$val);	  	
