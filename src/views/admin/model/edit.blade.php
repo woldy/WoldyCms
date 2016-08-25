@@ -27,6 +27,7 @@
 							</div>
 						</div>
 						<div class="panel-body">
+							
 							<div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
 							
 								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
@@ -35,36 +36,38 @@
 											<th>id</th>
 											<th data-priority="1">数据表</th>
 											<th data-priority="3">别名</th>
+											<th data-priority="1">配置项</th>
 											<th data-priority="3">操作</th>
-											<th data-priority="3">配置</th>
 
 										</tr>
 									</thead>
 									<tbody>
-									@foreach ($list as $item)
+									@foreach ($columns as $item)
 										<tr>
-											<th>{{$item['id']}}</th>
-											<td>{{$item['table']}}</td>
-											<td>{{$item['alias']}}</td>
-											<td>
-												<a href="/admin/model/edit/{{$item['table']}}">数据列表</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="/admin/model/edit/{{$item['table']}}"  >模型编辑</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="javascript:delmodel('{{$item['table']}}')" class="text-danger">删除模型</a>
-											</td>
-											<td>
-												<a href="/admin/model/edit/{{$item['table']}}"  >列表配置</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="/admin/model/edit/{{$item['table']}}"  class="">表单配置</a>
-											</td>
-
+											<th>{{$item['Field']}}</th>
+											<td>{{$item['Type']}}</td>
+											<td>{{$item['Null']}}</td>
+											<td></td>
+											<td>删除</td>
 										</tr>
 									@endforeach										
 									</tbody>
 								</table>
 							
-							</div>						
+							</div>
+							
+							<script type="text/javascript">
+							// This JavaScript Will Replace Checkboxes in dropdown toggles
+							jQuery(document).ready(function($)
+							{
+								setTimeout(function()
+								{
+									$(".checkbox-row input").addClass('cbr');
+									cbr_replace();
+								}, 0);
+							});
+							</script>
+								
 							
 						</div>
 					
@@ -72,12 +75,13 @@
 				</div>
 			</div>
 
+
 			<div class="row">
 				<div class="col-sm-12">
 					
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">新增模型</h3>
+							<h3 class="panel-title">Inline Form</h3>
 							<div class="panel-options">
 								<a href="#" data-toggle="panel">
 									<span class="collapse-icon">&ndash;</span>
@@ -88,25 +92,34 @@
 								</a>
 							</div>
 						</div>
-
-
 						<div class="panel-body">
-							<div role="form" class="form-inline">
+							
+							<form role="form" class="form-inline">
 								
 								<div class="form-group">
-									<input type="text" name="table" id="table" class="form-control" size="25" placeholder="表名称" value="wcms_" />
+									<input type="text" class="form-control" size="25" placeholder="Username" />
 								</div>
 								
 								<div class="form-group">
-									<input type="text" name="alias" id="alias" class="form-control" size="25" placeholder="别名" />
+									<input type="password" class="form-control" size="25" placeholder="Password" />
 								</div>
 								
 								<div class="form-group">
-									<button class="btn btn-primary btn-single addmodel">增加</button>
+									<button class="btn btn-secondary btn-single">Sign in</button>
 								</div>
-								<input type="hidden" name="_token" value="<?php echo csrf_token()?>" />
 								
-							</div>
+								<div class="form-group">
+									<label class="cbr-inline">
+										<input type="checkbox" class="cbr" checked>
+										Remember me
+									</label>
+								</div>
+								
+								<div class="form-group pull-right">
+									<button class="btn btn-white btn-single">Create new account</button>
+								</div>
+								
+							</form>
 						
 						</div>
 					</div>
@@ -114,47 +127,4 @@
 				</div>
 			</div>
 
-<script type="text/javascript">
-
-	jQuery(document).ready(function($){
- 
-		$(".addmodel").on('click', function(){
-			$.ajax({
-  				type: 'POST',
-  				url: '/admin/model/addtable',
-  				data: {
-  					'table':$("#table").val(),
-  					'alias':$("#alias").val(),
-  					'_token':"<?php echo csrf_token(); ?>",
-  				},
-  				success: function(data){
-  					location.href="";
-  					console.log('added');
-  				}
-			});
-		});
- 
-	});
-
-	function delmodel(model){
-		$.ajax({
-  			type: 'POST',
-  				url: '/admin/model/deltable',
-  				data: {
-  					'table':model,
-  					'_token':"<?php echo csrf_token(); ?>",
-  				},
-  				success: function(data){
-  					location.href="";
-  					console.log('added');
-  				}
-		});		
-		console.log(model+' was deleted!');
-	}
-
-</script>
-
-
-
 @stop
-

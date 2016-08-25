@@ -76,6 +76,7 @@ function iterateList(items, depth){
 	return str;
 }
 
+
 function sortMenu(str){
 	$.ajax({
   		type: 'POST',
@@ -89,6 +90,8 @@ function sortMenu(str){
   		}
 	});
 }
+
+
 
 /**
  * 点击某一项后
