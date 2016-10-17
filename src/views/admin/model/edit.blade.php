@@ -33,10 +33,9 @@
 								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
 									<thead>
 										<tr>
-											<th>id</th>
-											<th data-priority="1">数据表</th>
-											<th data-priority="3">别名</th>
-											<th data-priority="1">配置项</th>
+											<th>字段名</th>
+											<th data-priority="1">字段类型</th>
+										 	<th data-priority="1">字段说明</th>
 											<th data-priority="3">操作</th>
 
 										</tr>
@@ -46,9 +45,9 @@
 										<tr>
 											<th>{{$item['Field']}}</th>
 											<td>{{$item['Type']}}</td>
-											<td>{{$item['Null']}}</td>
-											<td></td>
-											<td>删除</td>
+											<td>{{$item['Comment']}}</td>
+											
+											<td><a class="model_edit">编辑</a> | <a class="model_del">删除</a></td>
 										</tr>
 									@endforeach										
 									</tbody>
@@ -81,7 +80,7 @@
 					
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Inline Form</h3>
+							<h3 class="panel-title">字段属性</h3>
 							<div class="panel-options">
 								<a href="#" data-toggle="panel">
 									<span class="collapse-icon">&ndash;</span>

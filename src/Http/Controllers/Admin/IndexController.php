@@ -7,7 +7,7 @@ class IndexController extends Controller
 {
     public function getIndex(){
     	//Menu::show();
-    	return Tpl::admin('index.index');
+    	return Tpl::view('index.index','admin');
     	//return view("woldycms::admin.admin");
     }
 

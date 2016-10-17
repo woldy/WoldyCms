@@ -22,6 +22,10 @@ Route::group(['prefix' => 'index'], function() {
 });
 
 
+
+
+
+
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/', function(){
 		return Redirect::to('admin/index');

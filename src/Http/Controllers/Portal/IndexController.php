@@ -6,7 +6,7 @@ use Tpl;
 class IndexController extends Controller
 {
     public function getIndex(){
-    	return Tpl::portal('index.index');
+    	return Tpl::view('index.index');
     }
 
  

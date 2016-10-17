@@ -78,7 +78,7 @@ class MenuController extends Controller
     			'attr'=>[
            			'name'=>'type',
            			'id'=>'type',
-           			'value'=>intval(Input::get('type'))
+           			'value'=>$type
     			],
     		],
 
@@ -108,7 +108,7 @@ class MenuController extends Controller
     	//Form::init($cfgform)->show();
     	//$form->show();
     	//Menu::show();
-    	return Tpl::admin('menu.list',[
+    	return Tpl::view('menu.list','admin',[
             'listform'=>$listform,
             'menu_html'=>Menu::edit_list(intval($type))
         ]);

@@ -54,14 +54,14 @@ class ModelController extends Controller
       
       	
  
-    	return Tpl::admin('model.list',['list'=>$list]);
+    	return Tpl::view('model.list','admin',['list'=>$list]);
     }
 
 
     public function edit($table){
-    	$columns=DB::select("show COLUMNS from $table");
+    	$columns=DB::select("show full columns from $table");
         //dd($columns);
-        return Tpl::admin('model.edit',['columns'=>$columns]);
+        return Tpl::view('model.edit','admin',['columns'=>$columns]);
 
 
     }
@@ -82,6 +82,9 @@ class ModelController extends Controller
                     $table->increments('id');
                     $table->timestamps();
                 }); 
+                DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `id` int COMMENT '行ID'");
+                DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `created_at` timestamp COMMENT '创建时间'");
+                DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `updated_at` timestamp COMMENT '更新时间'");
             }
         } 
         //return redirect('/admin/model/list');
