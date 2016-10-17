@@ -4,9 +4,7 @@
 //Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Http\Middleware\Admin'], function() {
 //
  
-Route::get('/', function(){
-	return Redirect::to('index/index');
-});
+
 
 
 Route::get('/font/{font}','Woldy\ResController@font');

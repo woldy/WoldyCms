@@ -4,7 +4,7 @@
 		
 			<!-- Navbar Brand -->
 			<div class="navbar-brand">
-				<a href="dashboard-1.html" class="logo">
+				<a href="/" class="logo">
 					<img src="{{$static_base}}/assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
 					<img src="{{$static_base}}/assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />
 				</a>
@@ -46,13 +46,13 @@
 					
 			<ul class="navbar-nav">
 				<li>
-					<a href="dashboard-1.html">
+					<a href="/">
 						<i class="linecons-cog"></i>
 						<span class="title">Dashboard</span>
 					</a>
 					<ul>
 						<li>
-							<a href="dashboard-1.html">
+							<a href="/">
 								<span class="title">Dashboard 1</span>
 							</a>
 						</li>

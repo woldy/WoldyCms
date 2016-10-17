@@ -5,11 +5,11 @@
                     
                     <!-- logo -->
                     <div class="logo">
-                        <a href="dashboard-1.html" class="logo-expanded">
+                        <a href="/" class="logo-expanded">
                             <img src="{{$static_base}}/assets/images/logo@2x.png" width="120" alt="" />
                         </a>
                         
-                        <a href="dashboard-1.html" class="logo-collapsed">
+                        <a href="/" class="logo-collapsed">
                             <img src="{{$static_base}}/assets/images/logo-collapsed@2x.png" width="40" alt="" />
                         </a>
                     </div>
