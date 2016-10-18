@@ -4,7 +4,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
 
-class Admin
+class AdminAuth
 {
     /**
      * Handle an incoming request.
@@ -21,14 +21,11 @@ class Admin
 
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->guest()) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('login');
-            }
+        if ($request->session()->has('admin')) {
+            return $next($request);
+        }else{
+            return response('forbidden', 403);
+            //return redirect()->route('/auth/login');/auth/login
         }
-
-        return $next($request);
     }
 }

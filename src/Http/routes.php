@@ -24,7 +24,7 @@ Route::group(['prefix' => 'index'], function() {
 
 
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 	Route::get('/', function(){
 		return Redirect::to('admin/index');
 	});
