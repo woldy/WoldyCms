@@ -8,8 +8,9 @@
 				
 					<!-- Add your copyright text here -->
 					<div class="footer-text">
-						&copy; 2014 
-						<strong>WoldyCMS</strong> 
+						&copy; 2016 
+						<strong>WoldyCMS</strong> by  <a href="http://weibo.com/woldy" clas="text-info">@无所不能的魂大人</a> <br />
+						无所不能的魂大人教导我们，不要做一个浮躁的人。
 					</div>
 					
 					
