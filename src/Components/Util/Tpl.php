@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Components\Tpl;
+namespace Woldy\Cms\Components\Util;
 use Illuminate\Config\Repository;
 class Tpl{
 

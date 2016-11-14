@@ -3,6 +3,8 @@ namespace Woldy\Cms\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
+use Cfg;
+use User;
 
 class AdminAuth
 {
@@ -21,12 +23,14 @@ class AdminAuth
 
     public function handle($request, Closure $next, $guard = null)
     {
-        return $next($request);
+ 
         if ($request->session()->has('admin')) {
             return $next($request);
         }else{
-            return response('forbidden', 403);
-            //return redirect()->route('/auth/login');/auth/login
+
+            $login_url=Cfg::get('admin_login_url');
+            header("Location:{$login_url}");
+            exit;
         }
     }
 }

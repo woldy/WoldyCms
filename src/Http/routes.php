@@ -21,9 +21,6 @@ Route::group(['prefix' => 'index'], function() {
 
 
 
-
-
-
 Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 	Route::get('/', function(){
 		return Redirect::to('admin/index');
@@ -33,5 +30,16 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 	
 	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
 	Route::controller('/model', 'Admin\ModelController');
+	Route::controller('/category', 'Admin\CategoryController');
 });
+
+
+Route::group(['prefix' => 'auth'], function() {
+	Route::get('/', function(){
+		return Redirect::to('user/login');
+	});
+	Route::controller('/admin', 'Auth\AdminController');
+	Route::controller('/user', 'Auth\UserController');
+});
+
 

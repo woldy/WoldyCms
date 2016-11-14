@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Components\Menu;
+namespace Woldy\Cms\Components\Util;
 use DB;
 use Request;
 class Menu{

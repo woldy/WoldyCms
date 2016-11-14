@@ -10,9 +10,11 @@
             "email": "king@woldy.net"
         }
     ],
-    "require": {},
-    "autoload": {
-        "psr-4": {
+    "require":{
+       
+    },
+    "autoload":{
+        "psr-4":{
             "Woldy\\Cms\\": "src/"
         }
     }

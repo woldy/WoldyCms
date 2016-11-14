@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="woldy" />
     
-    <title>@yield('title','默认标题')</title>
+    <title> {{ Cfg::get('site_title') }}</title>
 
     @foreach ($common_css as $css)
         <link rel="stylesheet" href="{{$static_base}}{{$css}}?ver={{$version}}">
