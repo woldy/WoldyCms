@@ -87,6 +87,11 @@ class Form{
         return $this; 
     }
 
+    public function iSwitch($config){
+        $this->html.=Native::iSwitch($config);
+        return $this; 
+    }
+
     public function button($config){
         $this->html.=Native::button($config);
         return $this;         

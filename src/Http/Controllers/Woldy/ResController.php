@@ -39,6 +39,14 @@ class ResController extends Controller
 			if(file_exists(__DIR__.'/../../../'.$src)){
 				$result=file_get_contents(__DIR__.'/../../../'.$src);
 				return response($result, '200')->header('Content-Type',$this->ext_array[$ext]);
+			}else{
+				$path=dirname(__DIR__.'/../../../'.$src);
+				if(!is_dir($path)){
+					mkdir($path,0777,true);
+				}
+				file_put_contents(__DIR__.'/../../../'.$src,'');
+				$result=file_get_contents(__DIR__.'/../../../'.$src);
+				return response($result, '200')->header('Content-Type',$this->ext_array[$ext]);
 			}
 		}
 		return abort(404);

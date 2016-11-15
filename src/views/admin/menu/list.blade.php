@@ -31,7 +31,6 @@
 			</div>			
 		</div>
 	</div>
-<link rel="stylesheet" href="{{$static_base}}/assets/css/admin/menu.edit.css">
 <link rel="stylesheet" href="{{$static_base}}/assets/css/xenon-components.css">
 <link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon/uikit/uikit.css">
 <script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>

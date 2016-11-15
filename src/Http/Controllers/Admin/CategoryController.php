@@ -5,7 +5,7 @@ use Woldy\Cms\Http\Controllers\Controller;
 use Tpl;
 class CategoryController extends Controller
 {
-    public function getIndex(){
+    public function getList(){
     	//Menu::show();
     	return Tpl::view('index.index','admin');
     	//return view("woldycms::admin.admin");

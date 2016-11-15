@@ -20,9 +20,9 @@ class MenuController extends Controller
     			'attr'=>[
            			'action'=>'/admin/menu/item',
             		'method'=>'post',
-            		'class'=>"validate",
             		'novalidate'=>"novalidate"
     			],
+                'class'=>"validate",
     		],
 
     		[
@@ -63,6 +63,63 @@ class MenuController extends Controller
            			'id'=>'class',
     			],
     		],
+
+            [
+                'type'=>'text',
+                'label'=>'nav标题',
+                'attr'=>[
+                    'name'=>'navtitle',
+                    'id'=>'navtitle',
+                ],
+            ],
+
+            [
+                'type'=>'text',
+                'label'=>'nav介绍',
+                'attr'=>[
+                    'name'=>'navtext',
+                    'id'=>'navtext',
+                ],
+            ],
+
+            [
+                'type'=>'text',
+                'label'=>'seo标题',
+                'attr'=>[
+                    'name'=>'seotitle',
+                    'id'=>'seotitle',
+                ],
+            ],
+
+            [
+                'type'=>'text',
+                'label'=>'seo介绍',
+                'attr'=>[
+                    'name'=>'seotext',
+                    'id'=>'seotext',
+                ],
+            ],                       
+
+            [
+                'type'=>'iSwitch',
+                'label'=>'是否隐藏',
+                'class'=>'iswitch-info',
+                'attr'=>[
+                    'name'=>'is_hide',
+                    'id'=>'is_hide',
+                ],
+            ],
+
+            [
+                'type'=>'iSwitch',
+                'label'=>'是否启用',
+                'class'=>'iswitch-info',
+                'attr'=>[
+                    'name'=>'is_enable',
+                    'id'=>'is_enable',
+                    'checked'=>'',
+                ],
+            ],
 
     		[
     			'type'=>'hidden',

@@ -54,36 +54,50 @@ class Native{
 	 */
 	public static function text($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
+		$config['class']=isset($config['class'])?$config['class']:'';
 		$label=isset($config['label'])?$config['label']:'';
 		$html="	<div class=\"form-group\" >
 					<label class=\"control-label \" for=\"field-1\" >
 						$label
 					</label>
 					<div>
-							<input type=\"text\" class=\"form-control\" $attr>
+							<input type=\"text\" {$attr}  class=\"form-control {$config['class']}\">
 					</div>
 				</div>";
 		return $html;
 	}
 
 	public static function button($config=['attr'=>[]]){
+		$config['class']=isset($config['class'])?$config['class']:'';
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\">
-					<button type=\"button\" $attr >$label</button>
+					<button type=\"button\" $attr class=\"{$config['class']}\" >$label</button>
 				</div>";
 		return $html;		
 	}
 
 	public static function submit($config=['attr'=>[]]){
+		$config['class']=isset($config['class'])?$config['class']:'';
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\">
-					<button type=\"submit\" $attr >$label</button>
+					<button type=\"submit\" $attr class=\"{$config['class']}\" >$label</button>
 				</div>";
 		return $html;		
 	}
 
+
+	public static function iSwitch($config=['attr'=>[]]){
+		$config['class']=isset($config['class'])?$config['class']:'';
+		$attr=Form::attr($config['attr']);
+		$label=isset($config['label'])?$config['label']:'';
+		$html="<div class=\"form-group\"><label class=\"col-sm-6 control-label\">{$label}</label>
+		<div class=\"col-sm-6\">
+		<input type=\"checkbox\" {$attr} class=\"iswitch {$config['class']}\">
+		</div></div>";
+		return $html;			
+	}
 
 	public static function hidden($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
