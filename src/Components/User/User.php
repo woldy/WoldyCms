@@ -17,11 +17,11 @@ class User{
             return false;
         }else{
            $userinfo=$userinfo->toarray();
-           $admin=[
-            'user'=>$userinfo,
-           ];
-           Session::put('admin',$admin);
-           Session::put('user',$admin);
+           // $admin=[
+           //  'user'=>$userinfo,
+           // ];
+           Session::put('admin',$userinfo);
+           Session::put('user',$userinfo);
            return true;
         }
 
