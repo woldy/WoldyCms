@@ -1,6 +1,8 @@
 <?php
 namespace Woldy\Cms\Components\Util;
 use Illuminate\Config\Repository;
+use Request;
+use Woldy\Cms\Models\MenuModel;
 class Tpl{
 
 	static $config;
@@ -14,32 +16,6 @@ class Tpl{
 	public static function getcss(){
 
 	}
-	// public static function admin($tpl,$val=array()){
-	// 	$val['version']=self::$version;
-	// 	$config=self::getconf('admin_cfg');
-	// 	$val['static']=[
-	// 		'css'=>'/assets/css/admin/'.str_replace('.', '/', $tpl).'.css',
-	// 		'js'=>'/assets/js/admin/'.str_replace('.', '/', $tpl).'.js'
-	// 	];
-	// 	$val=array_merge($val,$config);
-	// 	$layout=$config['tpl_base'].'.'.$tpl;
-	//     return view($layout,$val);	  	
-	// }
-
-
-	// public static function portal($tpl,$val=array()){
-	// 	$val['version']=self::$version;
-	// 	$config=self::getconf('portal_cfg');
-	// 	$val['static']=[
-	// 		'css'=>'/assets/css/portal/'.str_replace('.', '/', $tpl).'.css',
-	// 		'js'=>'/assets/js/portal/'.str_replace('.', '/', $tpl).'.js'
-	// 	];
-	// 	$val=array_merge($val,$config);
-	// 	$layout=$config['tpl_base'].'.'.$tpl;
-	//     return view($layout,$val);	  	
-	// }
-
-
 
 	public static function view($tpl,$type='portal',$val=array()){
 		$val['version']=self::$version;
@@ -60,6 +36,13 @@ class Tpl{
 		return $conf;
 	}
 
-
+	public static function getinfo(){
+		$urlpath='/'.urldecode(Request::path()); 
+        $info=MenuModel::where('url','=',$urlpath)->first();
+        if(!empty($info)){
+        	$info=$info->toarray();
+        }
+        return $info;
+	}
  
 } 

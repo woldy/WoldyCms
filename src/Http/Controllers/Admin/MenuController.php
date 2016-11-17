@@ -102,11 +102,12 @@ class MenuController extends Controller
 
             [
                 'type'=>'iSwitch',
-                'label'=>'是否隐藏',
+                'label'=>'是否显示',
                 'class'=>'iswitch-info',
                 'attr'=>[
-                    'name'=>'is_hide',
-                    'id'=>'is_hide',
+                    'name'=>'display',
+                    'id'=>'display',
+                    'checked'=>'',
                 ],
             ],
 
@@ -115,8 +116,8 @@ class MenuController extends Controller
                 'label'=>'是否启用',
                 'class'=>'iswitch-info',
                 'attr'=>[
-                    'name'=>'is_enable',
-                    'id'=>'is_enable',
+                    'name'=>'enable',
+                    'id'=>'enable',
                     'checked'=>'',
                 ],
             ],
@@ -217,22 +218,17 @@ class MenuController extends Controller
 
     public function postItem(){
     	$id=intval(Input::get('id'));
+        $input = Input::except('_token');
     	if($id==0){
         	$item = new \Woldy\Cms\Models\MenuModel;
         	$item->pid=0;
         	$item->display=1;
         	$item->enable=1;
+            MenuModel::create($input);
     	}else{
     		$item = \Woldy\Cms\Models\MenuModel::find($id);
-
+            $item->update($input);
     	}
-    	$item->title = Input::get('title');
-		$item->url = Input::get('url');
-		$item->class = Input::get('class');
-		$item->icon = Input::get('icon');
-		$item->type = intval(Input::get('type'));
-		$item->save();
- 
     	return Redirect::back();
     }
 }

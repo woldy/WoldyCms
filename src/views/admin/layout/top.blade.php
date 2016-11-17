@@ -8,5 +8,6 @@
 		</div>
 		@include('woldycms::admin.common.chat')	
 	</div>
+@include('woldycms::admin.common.debug')
 @include('woldycms::admin.common.bottom')
 @include('woldycms::admin.common.js')

@@ -8,6 +8,7 @@ class MenuModel extends Model
 {
     protected $table = 'wcms_menu';
     public $timestamps = false;
+    protected $guarded=[];
 }
 
  

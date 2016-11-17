@@ -2,6 +2,7 @@
 namespace Woldy\Cms\Components\Util;
 use DB;
 use Request;
+use Woldy\Cms\Models\MenuModel;
 class Menu{
 
 	public static $menu_table='wcms_menu';
@@ -25,8 +26,8 @@ class Menu{
 
     public static function get_tree($type=0){    //获取全部菜单
         $tree_list=DB::table(self::$menu_table)
-            ->where('display',1)
-            ->where('enable',1)
+            ->where('display',0)
+            ->where('enable',0)
             ->where('type','=',$type)
             ->orderBy('idx', 'asc')
             ->get();
@@ -84,6 +85,9 @@ class Menu{
          
         return $tree_html;
     }
+
+ 
+
 
 
      public static function get_menu_show_list($type='0',$tree=''){ 
