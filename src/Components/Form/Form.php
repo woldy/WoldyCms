@@ -30,7 +30,14 @@ class Form{
 
     public static function build($config){
         $form=new Form();
+        $formConfig=$config[0];
+        $fromstyle=isset($formConfig['class'])?$formConfig['class']:'';
+
         foreach ($config as $item) {
+            $item['class']=isset($item['class'])?$item['class']:'';
+            $item['class_label']=$fromstyle=='form-horizontal'?'col-sm-2':'';
+            $item['class_div']=$fromstyle=='form-horizontal'?'col-sm-10':'';
+
             $form->$item['type']($item);
         }
         return $form->get();

@@ -15,7 +15,7 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$html="
 <div class=\"row\">
-	<form role=\"form\" $attr>";
+	<form role=\"form\" $attr class=\"{$config['class']}\">";
 		return $html;		
 	}
 
@@ -54,13 +54,12 @@ class Native{
 	 */
 	public static function text($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
-		$config['class']=isset($config['class'])?$config['class']:'';
 		$label=isset($config['label'])?$config['label']:'';
-		$html="	<div class=\"form-group\" >
-					<label class=\"control-label \" for=\"field-1\" >
+		$html="	<div class=\"form-group \" >
+					<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >
 						$label
 					</label>
-					<div>
+					<div class=\"{$config['class_div']}\">
 							<input type=\"text\" {$attr}  class=\"form-control {$config['class']}\">
 					</div>
 				</div>";
@@ -68,7 +67,6 @@ class Native{
 	}
 
 	public static function button($config=['attr'=>[]]){
-		$config['class']=isset($config['class'])?$config['class']:'';
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\">
@@ -78,7 +76,6 @@ class Native{
 	}
 
 	public static function submit($config=['attr'=>[]]){
-		$config['class']=isset($config['class'])?$config['class']:'';
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\">
@@ -89,7 +86,6 @@ class Native{
 
 
 	public static function iSwitch($config=['attr'=>[]]){
-		$config['class']=isset($config['class'])?$config['class']:'';
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\"><label class=\"col-sm-6 control-label\">{$label}</label>

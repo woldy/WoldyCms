@@ -1,15 +1,15 @@
 			<div class="page-title">
 				
 				<div class="title-env">
-					<h1 class="title">Nestable Lists</h1>
-					<p class="description">Drag to move and sort lists between groups</p>
+					<h1 class="title">{{Tpl::getinfo()['navtitle']}}</h1>
+					<p class="description">{{Tpl::getinfo()['navtext']}}</p>
 				</div>
 				
 					<div class="breadcrumb-env">
 					
 								<ol class="breadcrumb bc-1">
 									<li>
-							<a href="/"><i class="fa-home"></i>Home</a>
+							<a href="/"><i class="fa-home"></i>首页</a>
 						</li>
 								<li>
 						
