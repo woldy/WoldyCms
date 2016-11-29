@@ -109,6 +109,11 @@ class Form{
         return $this;         
     }
 
+    public function textarea($config){
+        $this->html.=Native::textarea($config);
+        return $this;         
+    }
+
     public function hidden($config){
         $this->html.=Native::hidden($config);
         return $this;         

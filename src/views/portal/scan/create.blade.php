@@ -12,8 +12,8 @@
 					
 						<ul class="nav tabs-vertical">
 							<li class="active"><a href="#v-home" data-toggle="tab">主机扫描</a></li>
-							<li class=""><a href="#v-profile" data-toggle="tab">WEB扫描</a></li>
-							<li class=""><a href="#v-messages" data-toggle="tab">SqlMap</a></li>
+							<li class=""><a href="#v-profile" data-toggle="tab">Web扫描</a></li>
+							<li class=""><a href="#v-messages" data-toggle="tab">Sql注入</a></li>
 							<!-- <li class=""><a href="#v-settings" data-toggle="tab">SqlMap</a></li> -->
 						</ul>
 						

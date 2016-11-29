@@ -66,6 +66,23 @@ class Native{
 		return $html;
 	}
 
+
+	public static function textarea($config=['attr'=>[]]){
+		$attr=Form::attr($config['attr']);
+		$label=isset($config['label'])?$config['label']:'';
+		$html="	<div class=\"form-group \" >
+					<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >
+						$label
+					</label>
+					<div class=\"{$config['class_div']}\">
+							
+					<textarea type=\"text\" {$attr}  class=\"form-control {$config['class']}\"></textarea>
+					</div>
+				</div>";
+		return $html;
+	}
+
+
 	public static function button($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
