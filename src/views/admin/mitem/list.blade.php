@@ -32,33 +32,19 @@
 								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
 									<thead>
 										<tr>
-											<th>id</th>
-											<th data-priority="1">数据表</th>
-											<th data-priority="3">别名</th>
-											<th data-priority="3">操作</th>
-											<th data-priority="3">配置</th>
+											@foreach ($columns as $column)
+												<th>{{empty($column['Comment'])?$column['Field']:$column['Comment']}}</th>
+											@endforeach	
 
 										</tr>
 									</thead>
 									<tbody>
 									@foreach ($list as $item)
 										<tr>
-											<th>{{$item['id']}}</th>
-											<td>{{$item['table']}}</td>
-											<td>{{$item['alias']}}</td>
-											<td>
-												<a href="/admin/mitem/list/{{$item['table']}}">数据列表</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="/admin/model/edit/{{$item['table']}}">模型编辑</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="javascript:delmodel('{{$item['table']}}')" class="text-danger">删除模型</a>
-											</td>
-											<td>
-												<a href="/admin/model/edit/{{$item['table']}}"  >列表配置</a>
-												&nbsp;&nbsp;|&nbsp;&nbsp;
-												<a href="/admin/model/edit/{{$item['table']}}"  class="">表单配置</a>
-											</td>
+											@foreach($item as $key=>$value)
 
+											<th>{!!($key=='id' || $key=='title')?"<a href=\"../show/{$table}/{$item['id']}\">$value</a>":$value!!}</th>
+											@endforeach	
 										</tr>
 									@endforeach										
 									</tbody>

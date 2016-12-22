@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 	
 	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
 	Route::controller('/model', 'Admin\ModelController');
+	Route::controller('/mitem', 'Admin\mItemController');
 	Route::controller('/category', 'Admin\CategoryController');
 });
 

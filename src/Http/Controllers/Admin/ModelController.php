@@ -6,7 +6,7 @@ use Illuminate\Http\Response;
 use Illuminate\Database\Schema\Blueprint;
 use App\Http\Requests;
 use Woldy\Cms\Http\Controllers\Controller;
-use Woldy\Cms\Models\ModelsModel;
+use Woldy\Cms\Models\BasicModel;
 use Redirect;
 use Menu;
 use Tpl;
@@ -45,7 +45,7 @@ class ModelController extends Controller
          * 对比models和tables，如果模型是mysql表，则显示表细节
          * @var [type]
          */
-        $models=ModelsModel::all()->toArray();
+        $models=BasicModel::all()->toArray();
         foreach ($models as $model) {
         	if(in_array($model['table'],$tables)){
         		$list[$model['table']]=$model;
@@ -64,6 +64,18 @@ class ModelController extends Controller
         return Tpl::view('model.edit','admin',['columns'=>$columns]);
 
 
+    }
+
+
+    public function getShow($table){
+
+        $columns=DB::select("show full columns from $table");
+        
+        $table=new BasicModel($table);
+        $data=$table->get()->toarray();
+
+        return Tpl::view('model.show','admin',['columns'=>$columns]);
+        //var_dump($data);
     }
 
 

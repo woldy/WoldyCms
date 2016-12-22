@@ -4,10 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Input;
 use Request;
 
-class ModelsModel extends Model
+class BasicModel extends Model
 {
-    protected $table = 'wcms_models';
+    public $table = 'wcms_models';
     public $timestamps = false;
+
+	function __construct($_table='wcms_models'){
+		$this->table=$_table;
+	}
 
 }
 
