@@ -1,8 +1,8 @@
 			<div class="page-title">
 				
 				<div class="title-env">
-					<h1 class="title">{{Tpl::getinfo()['navtitle']}}</h1>
-					<p class="description">{{Tpl::getinfo()['navtext']}}</p>
+					<h1 class="title">{{Tpl::getinfo()['navtitle']??''}}</h1>
+					<p class="description">{{Tpl::getinfo()['navtext']??''}}</p>
 				</div>
 				
 					<div class="breadcrumb-env">

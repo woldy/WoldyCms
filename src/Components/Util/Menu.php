@@ -98,12 +98,14 @@ class Menu{
              $treepath=DB::table(self::$menu_table)
              ->where('type',$type)
             ->where('url',$urlpath)
-            ->pluck('path');
+            ->pluck('path')->toArray();;
  
             if(!empty($treepath)){//存在此树
                 self::$current=$urlpath;
                 self::$path=explode('-', $treepath[0]);
             }
+
+ 
  
 
             $tree=self::get_tree($type);

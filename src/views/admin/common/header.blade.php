@@ -6,10 +6,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="" />
-    <meta name="description" content="{{Tpl::getinfo()['seotext']}}" />
+    <meta name="description" content="{{Tpl::getinfo()['seotext']??''}}" />
     <meta name="author" content="woldy" />
     
-    <title> {{Cfg::get('site_title')}}-{{Tpl::getinfo()['seotitle']}}</title>
+    <title> {{Cfg::get('site_title')}}-{{Tpl::getinfo()['seotitle']??''}}</title>
 
     @foreach ($common_css as $css)
         <link rel="stylesheet" href="{{$static_base}}{{$css}}?ver={{$version}}">

@@ -5,8 +5,9 @@ use Woldy\Cms\Http\Controllers\Controller;
 use Tpl;
 class IndexController extends Controller
 {
-    public function getIndex(){
-    	return Tpl::view('index.index');
+    public function index(){
+    	echo 'hello woldy!';
+    	//return Tpl::view('index.index');
     }
 
  

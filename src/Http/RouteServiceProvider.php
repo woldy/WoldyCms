@@ -1,6 +1,8 @@
 <?php
+
 namespace Woldy\Cms\Http;
-use Illuminate\Routing\Router;
+
+use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
@@ -17,31 +19,25 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot(Router $router)
+    public function boot()
     {
         //
-        $this->loadViewsFrom(__DIR__.'../../views', 'woldycms');
-        parent::boot($router);
+        
+        parent::boot();
     }
 
     /**
      * Define the routes for the application.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function map(Router $router)
+    public function map()
     {
-        $this->mapWebRoutes($router);
+        $this->mapWebRoutes();
 
-        // echo "test";
-        // $a=new \Woldy\Cms\Http\Controllers\Admin\IndexController();
-        // exit;
-
-        //
+ 
     }
 
     /**
@@ -52,12 +48,14 @@ class RouteServiceProvider extends ServiceProvider
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function mapWebRoutes(Router $router)
+    protected function mapWebRoutes()
     {
-        $router->group([
-            'namespace' => $this->namespace, 'middleware' => 'web',
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->namespace,
         ], function ($router) {
-            require ((__DIR__).'/routes.php');
+            require (dirname(__FILE__).'/routes.php');
         });
+
     }
 }

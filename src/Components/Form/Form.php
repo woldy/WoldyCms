@@ -37,8 +37,8 @@ class Form{
             $item['class']=isset($item['class'])?$item['class']:'';
             $item['class_label']=$fromstyle=='form-horizontal'?'col-sm-2':'';
             $item['class_div']=$fromstyle=='form-horizontal'?'col-sm-10':'';
-
-            $form->$item['type']($item);
+            $method=$item['type'];
+            $form->$method($item);
         }
         return $form->get();
     }
@@ -70,6 +70,7 @@ class Form{
     }
 
     public function form($config){
+ 
         $this->html.=Native::form($config);
         return $this;
     }

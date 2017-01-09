@@ -13,12 +13,13 @@ class TplServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'../../views', 'woldycms');
+
+        $this->loadViewsFrom(__DIR__.'/../../views', 'woldycms');
 
 
         $this->publishes([
-            __DIR__.'../../views' => base_path('resources/views/woldycms'),
-            __DIR__.'../../config/tpl.php' => config_path('tpl.php'),
+            __DIR__.'/../../views' => base_path('resources/views/woldycms'),
+            __DIR__.'/../../config/tpl.php' => config_path('tpl.php'),
         ]);
     }
 
