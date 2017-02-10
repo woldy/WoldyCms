@@ -12,7 +12,9 @@ class Menu{
     private $menu_type=[
         '0'=>'admin',
         '1'=>'portal',
-        '2'=>'wiki'
+        '2'=>'index',
+        '3'=>'wiki'
+
     ];
 
 	public static function show_list($type=0){

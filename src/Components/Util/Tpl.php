@@ -20,6 +20,8 @@ class Tpl{
 	public static function view($tpl,$type='portal',$val=array()){
 		$val['version']=self::$version;
 		$config=self::getconf($type.'_cfg');
+ 
+
 		$val['static']=[
 			'css'=>"/assets/css/{$type}/".str_replace('.', '/', $tpl).'.css',
 			'js'=>"/assets/js/{$type}/".str_replace('.', '/', $tpl).'.js'
