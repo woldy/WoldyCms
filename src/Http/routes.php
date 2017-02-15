@@ -33,8 +33,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 
 	Route::get('/menu/list/{type}', 'Admin\MenuController@getList');
 	Route::post('/menu/sort', 'Admin\MenuController@postSort');
-	Route::get('/menu/item', 'Admin\MenuController@postItem');
-	Route::post('/menu/item', 'Admin\MenuController@getItem');
+	Route::get('/menu/item', 'Admin\MenuController@getItem');
+	Route::post('/menu/item', 'Admin\MenuController@postItem');
 
 
 	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
@@ -52,8 +52,13 @@ Route::group(['prefix' => 'auth'], function() {
 	Route::get('/', function(){
 		return Redirect::to('user/login');
 	});
-	Route::resource('/admin', 'Auth\AdminController');
+	Route::resource('/admin/login', 'Auth\AdminController');
 	Route::resource('/user', 'Auth\UserController');
 });
 
+Route::group(['middleware' => ['auth.user']], function(){
+	Route::get('/wiki/{name}', 'Wiki\IndexController@show');
+	Route::get('/wiki/edit/{name}', 'Wiki\EditController@show');
+	Route::post('/wiki/edit/{name}', 'Wiki\EditController@store');
+});
 

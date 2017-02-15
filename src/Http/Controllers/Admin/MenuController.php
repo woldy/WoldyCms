@@ -217,6 +217,7 @@ class MenuController extends Controller
 
 
     public function postItem(){
+       
     	$id=intval(Input::get('id'));
         $input = Input::except('_token');
     	if($id==0){
