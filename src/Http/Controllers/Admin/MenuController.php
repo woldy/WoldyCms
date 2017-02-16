@@ -168,7 +168,7 @@ class MenuController extends Controller
     	//Menu::show();
     	return Tpl::view('menu.list','admin',[
             'listform'=>$listform,
-            'menu_html'=>Menu::edit_list(intval($type))
+            'menu_html'=>Menu::edit_list(intval($type),'all')
         ]);
     }
 

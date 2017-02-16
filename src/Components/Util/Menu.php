@@ -26,10 +26,12 @@ class Menu{
     }
 
 
-    public static function get_tree($type=0){    //获取全部菜单
-        $tree_list=DB::table(self::$menu_table)
-            ->where('display','on')
-            ->where('enable','on')
+    public static function get_tree($type=0,$display='on'){    //获取全部菜单
+        $tree_list=DB::table(self::$menu_table);
+        if($display=='on'){
+             $tree_list= $tree_list->where('display','on')->where('enable','on');
+        }
+        $tree_list=$tree_list
             ->where('type','=',$type)
             ->orderBy('idx', 'asc')
             ->get();
