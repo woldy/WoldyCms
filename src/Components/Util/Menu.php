@@ -53,7 +53,7 @@ class Menu{
         $tree_html='';
         $first=false;
         if(empty($tree)){
-            $tree=self::get_tree($type);
+            $tree=self::get_tree($type,'all');
             $first=true;
         }
         if(is_array($tree) && count($tree)>0){
