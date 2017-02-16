@@ -28,8 +28,8 @@ class Menu{
 
     public static function get_tree($type=0){    //获取全部菜单
         $tree_list=DB::table(self::$menu_table)
-            ->where('display',0)
-            ->where('enable',0)
+            ->where('display','on')
+            ->where('enable','on')
             ->where('type','=',$type)
             ->orderBy('idx', 'asc')
             ->get();
