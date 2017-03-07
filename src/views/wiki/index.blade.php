@@ -1,4 +1,4 @@
-@extends('index.layout.left')
+@extends('woldycms::wiki.layout.left')
 @section('content')
  <style type="text/css">
 .margin-tb-zero,
@@ -239,10 +239,10 @@
 .tocify-content p{
   color: #666;
 }
-
+/*
 .main-content{
   padding: 10px 30px !important;
-}
+}*/
 
 </style>
 <div class="row">

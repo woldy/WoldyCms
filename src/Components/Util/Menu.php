@@ -17,6 +17,25 @@ class Menu{
 
     ];
 
+    public static function get_nav(){
+            $nav='';
+            $urlpath='/'.urldecode(Request::path()); //高亮当前菜单
+            $treepath=MenuModel::where('url',$urlpath)->first();
+            if(empty($treepath)){
+
+            }else{
+
+
+
+                $nav_list=MenuModel::whereIn('id',explode('-', $treepath->path))->get()->toArray();
+                foreach ($nav_list as $item) {
+                    $nav.="<li><a href=\"{$item['url']}\">{$item['title']}</a></li>";                
+                }
+            }
+            return $nav;
+            
+    }
+
 	public static function show_list($type=0){
 		return self::get_menu_show_list($type);
 	}
@@ -102,7 +121,7 @@ class Menu{
              $treepath=DB::table(self::$menu_table)
              ->where('type',$type)
             ->where('url',$urlpath)
-            ->pluck('path')->toArray();;
+            ->pluck('path')->toArray();
  
             if(!empty($treepath)){//存在此树
                 self::$current=$urlpath;

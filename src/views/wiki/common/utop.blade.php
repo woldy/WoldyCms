@@ -9,7 +9,7 @@
 							<i class="fa-bars"></i>
 						</a>
 					</li>
-					
+				<!--	
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-envelope-o"></i>
@@ -21,7 +21,7 @@
 									
 								<ul class="dropdown-menu-list list-unstyled ps-scrollbar">
 								
-									<li class="active"><!-- "active" class means message is unread -->
+									<li class="active">
 										<a href="#">
 											<span class="line">
 												<strong>Luc Chartier</strong>
@@ -73,9 +73,9 @@
 										</a>
 									</li>
 									
-									<!-- Repeated -->
+								
 									
-									<li class="active"><!-- "active" class means message is unread -->
+									<li class="active">
 										<a href="#">
 											<span class="line">
 												<strong>Luc Chartier</strong>
@@ -248,10 +248,13 @@
 									<i class="fa-link-ext"></i>
 								</a>
 							</li>
+							-->
 						</ul>
 					</li>
 					
 				</ul>
+
+
 				
 				
 				<!-- Right links for user info navbar -->
@@ -271,14 +274,14 @@
 					
 					<li class="dropdown user-profile">
 						<a href="#" data-toggle="dropdown">
-							<img src="{{$static_base}}/assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
+							<img src="{{empty(User::getUser()['avatar'])?$static_base.'/assets/images/user-4.png':User::getUser()['avatar']}}" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 							<span>
-								Arlind Nushi
+								{{User::getUser()['name']??'造物神'}}
 								<i class="fa-angle-down"></i>
 							</span>
 						</a>
 						
-						<ul class="dropdown-menu user-profile-menu list-unstyled">
+<!-- 						<ul class="dropdown-menu user-profile-menu list-unstyled">
 							<li>
 								<a href="#edit-profile">
 									<i class="fa-edit"></i>
@@ -309,14 +312,14 @@
 									Logout
 								</a>
 							</li>
-						</ul>
+						</ul> -->
 					</li>
 					
-					<li>
+<!-- 					<li>
 						<a href="#" data-toggle="chat">
 							<i class="fa-comments-o"></i>
 						</a>
-					</li>
+					</li> -->
 					
 				</ul>
 				

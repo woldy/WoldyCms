@@ -120,4 +120,9 @@ class Form{
         return $this;         
     }
 
+    public function file($config){
+        $this->html.=Native::file($config);
+        return $this; 
+    }
+
 }

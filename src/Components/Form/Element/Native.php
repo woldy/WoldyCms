@@ -54,18 +54,46 @@ class Native{
 	 */
 	public static function text($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
+		$help=$config['help']??'';
+ 		$help_block=empty($help)?'':"<p class=\"help-block\">{$help}</p>";
 		$label=isset($config['label'])?$config['label']:'';
 		$html="	<div class=\"form-group \" >
 					<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >
 						$label
 					</label>
 					<div class=\"{$config['class_div']}\">
-							<input type=\"text\" {$attr}  class=\"form-control {$config['class']}\">
+							<input type=\"text\" {$attr}   class=\"form-control {$config['class']}\">
+							{$help_block}
 					</div>
+
 				</div>";
 		return $html;
 	}
 
+
+	/**
+	 * 上传文件
+	 * @Author   woldy
+	 * @DateTime 2016-05-25T23:08:53+0800
+	 * @param    array                    $config [description]
+	 * @return   [type]                           [description]
+	 */
+	public static function file($config=['attr'=>[]]){
+		$attr=Form::attr($config['attr']);
+		$label=isset($config['label'])?$config['label']:'';
+		$help=$config['help']??'';
+ 		$help_block=empty($help)?'':"<p class=\"help-block\">{$help}</p>";
+		$html="	<div class=\"form-group \" >
+					<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >
+						$label
+					</label>
+					<div class=\"{$config['class_div']}\">
+							<input type=\"file\" {$attr}  class=\"form-control {$config['class']}\">
+							{$help_block}
+					</div>
+				</div>";
+		return $html;
+	}
 
 	public static function textarea($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
@@ -96,8 +124,10 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\">
+			<div class=\"col-sm-12\">
 					<button type=\"submit\" $attr class=\"{$config['class']}\" >$label</button>
-				</div>";
+					</div>
+			</div>";
 		return $html;		
 	}
 
@@ -106,7 +136,8 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\"><label class=\"col-sm-6 control-label\">{$label}</label>
-		<div class=\"col-sm-6\">
+		
+
 		<input type=\"checkbox\" {$attr} class=\"iswitch {$config['class']}\">
 		</div></div>";
 		return $html;			

@@ -1,14 +1,14 @@
-@include('index.common.header')
-@include('index.common.setting')
-@include('index.common.top')
+@include('woldycms::wiki.common.header')
+@include('woldycms::wiki.common.setting')
+@include('woldycms::wiki.common.top')
 	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 		<div class="main-content">
 			@section('content')
-			@include('index.common.footer')
+			@include('woldycms::wiki.common.footer')
 			@show
 		</div>
-		@include('index.common.chat')	
+		@include('woldycms::wiki.common.chat')	
 	</div>
-@include('index.common.debug')
-@include('index.common.bottom')
-@include('index.common.js')
+@include('woldycms::wiki.common.debug')
+@include('woldycms::wiki.common.bottom')
+@include('woldycms::wiki.common.js')
