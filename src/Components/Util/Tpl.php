@@ -6,8 +6,6 @@ use Woldy\Cms\Models\MenuModel;
 class Tpl{
 
 	static $config;
-	static $version=0;
-
 	public function __construct(Repository $config){
 		self::$config = $config;
 	}
@@ -18,8 +16,8 @@ class Tpl{
 	}
 
 	public static function view($tpl,$type='portal',$val=array()){
-		$val['version']=self::$version;
 		$config=self::getconf($type.'_cfg');
+		$val['version']=$config['version'];
 		$val['static']=[
 			'css'=>"/assets/css/{$type}/".str_replace('.', '/', $tpl).'.css',
 			'js'=>"/assets/js/{$type}/".str_replace('.', '/', $tpl).'.js'
