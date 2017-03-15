@@ -42,5 +42,10 @@ class Tpl{
         }
         return $info;
 	}
+
+	public static function static_base($type){
+		$config=self::getconf($type.'_cfg');
+		return $config['static_base'];
+	}
  
 } 

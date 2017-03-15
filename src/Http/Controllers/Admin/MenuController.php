@@ -219,6 +219,8 @@ class MenuController extends Controller
     public function postItem(){
     	$id=intval(Input::get('id'));
         $input = Input::except('_token');
+        $input['display']=$input['display']??'off';
+        $input['enable']=$input['enable']??'off';
     	if($id==0){
         	$item = new \Woldy\Cms\Models\MenuModel;
         	$item->pid=0;

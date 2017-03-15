@@ -4,6 +4,10 @@ use Woldy\Cms\Models\UserModel;
 use Hash;
 use Session;
 class User{
+    public static function getUser(){
+        return Session::get('user');
+    }
+
     public static function adminLogin($username,$password){
         if(is_numeric($username) && strlen($username)==11){
             $userinfo=UserModel::where('phone',$username)->find(1);

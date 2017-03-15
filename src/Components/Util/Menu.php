@@ -12,8 +12,29 @@ class Menu{
     private $menu_type=[
         '0'=>'admin',
         '1'=>'portal',
-        '2'=>'wiki'
+        '2'=>'index',
+        '3'=>'wiki'
+
     ];
+
+    public static function get_nav(){
+            $nav='';
+            $urlpath='/'.urldecode(Request::path()); //高亮当前菜单
+            $treepath=MenuModel::where('url',$urlpath)->first();
+            if(empty($treepath)){
+
+            }else{
+
+
+
+                $nav_list=MenuModel::whereIn('id',explode('-', $treepath->path))->get()->toArray();
+                foreach ($nav_list as $item) {
+                    $nav.="<li><a href=\"{$item['url']}\">{$item['title']}</a></li>";                
+                }
+            }
+            return $nav;
+            
+    }
 
 	public static function show_list($type=0){
 		return self::get_menu_show_list($type);
@@ -24,10 +45,12 @@ class Menu{
     }
 
 
-    public static function get_tree($type=0){    //获取全部菜单
-        $tree_list=DB::table(self::$menu_table)
-            ->where('display',0)
-            ->where('enable',0)
+    public static function get_tree($type=0,$display='on'){    //获取全部菜单
+        $tree_list=DB::table(self::$menu_table);
+        if($display=='on'){
+             $tree_list= $tree_list->where('display','on')->where('enable','on');
+        }
+        $tree_list=$tree_list
             ->where('type','=',$type)
             ->orderBy('idx', 'asc')
             ->get();
@@ -49,7 +72,7 @@ class Menu{
         $tree_html='';
         $first=false;
         if(empty($tree)){
-            $tree=self::get_tree($type);
+            $tree=self::get_tree($type,'all');
             $first=true;
         }
         if(is_array($tree) && count($tree)>0){
@@ -98,7 +121,7 @@ class Menu{
              $treepath=DB::table(self::$menu_table)
              ->where('type',$type)
             ->where('url',$urlpath)
-            ->pluck('path')->toArray();;
+            ->pluck('path')->toArray();
  
             if(!empty($treepath)){//存在此树
                 self::$current=$urlpath;

@@ -48,7 +48,7 @@
 					</div>
 					
 					<div class="login-footer">
-						<a href="javascript:alert('忘你麻痹！这后台就我一个人能进！')">忘记密码?</a>
+						<a href="javascript:alert('忘你xx！这后台就我一个人能进！')">忘记密码?</a>
 						
 <!-- 						<div class="info-links">
 							<a href="#">联系我们</a>
