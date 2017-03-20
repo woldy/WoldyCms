@@ -14,4 +14,8 @@ class UserController extends Controller
     public static function test(){
     	echo 'test';
     }
+
+    public function login(){
+    	
+    }
 }

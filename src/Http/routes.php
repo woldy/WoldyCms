@@ -25,9 +25,10 @@ Route::get('/res', 'Woldy\ResController@res');
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
-	Route::get('/', function(){
-		return Redirect::to('admin/index');
-	});
+	// Route::get('/', function(){
+	// 	return Redirect::to('admin/index');
+	// });
+	Route::get('/', 'Admin\IndexController@index');
 	Route::resource('index', 'Admin\IndexController');
 
 
@@ -49,9 +50,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 
 
 Route::group(['prefix' => 'auth'], function() {
-	Route::get('/', function(){
-		return Redirect::to('user/login');
-	});
+	// Route::get('/', function(){
+	// 	return Redirect::to('user/login');
+	// });
+	Route::resource('/', 'Auth\UserController@login');
 	Route::resource('/admin/login', 'Auth\AdminController');
 	Route::resource('/user', 'Auth\UserController');
 });
