@@ -102,9 +102,7 @@ class ModelController extends Controller
         //return redirect('/admin/model/list');
     }
 
-    public function getEdit($table){
-        return true;
-    }
+ 
 
 
     /**
