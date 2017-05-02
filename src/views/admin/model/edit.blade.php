@@ -5,7 +5,7 @@
 				
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">详细列表</h3>
+							<h3 class="panel-title">模型编辑：{{$table}}</h3>
 							
 							<div class="panel-options">
 								<a href="#">
@@ -35,6 +35,8 @@
 										<tr>
 											<th>字段名</th>
 											<th data-priority="1">字段类型</th>
+											<th data-priority="1">字段长度</th>
+											<th data-priority="1">小数位</th>
 										 	<th data-priority="1">字段说明</th>
 											<th data-priority="3">操作</th>
 
@@ -43,9 +45,11 @@
 									<tbody>
 									@foreach ($columns as $item)
 										<tr>
-											<th>{{$item['Field']}}</th>
-											<td>{{$item['Type']}}</td>
-											<td>{{$item['Comment']}}</td>
+											<th>{{$item['COLUMN_NAME']}}</th>
+											<td>{{$item['DATA_TYPE']}}</td>
+											<td>{{$item['CHARACTER_MAXIMUM_LENGTH']??$item['CHARACTER_OCTET_LENGTH']??0}}</td>
+											<td>{{$item['NUMERIC_SCALE']??0}}</td>
+											<td>{{$item['COLUMN_COMMENT']}}</td>
 											
 											<td><a class="model_edit">编辑</a> | <a class="model_del">删除</a></td>
 										</tr>
@@ -92,38 +96,24 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							
-							<form role="form" class="form-inline">
-								
-								<div class="form-group">
-									<input type="text" class="form-control" size="25" placeholder="Username" />
-								</div>
-								
-								<div class="form-group">
-									<input type="password" class="form-control" size="25" placeholder="Password" />
-								</div>
-								
-								<div class="form-group">
-									<button class="btn btn-secondary btn-single">Sign in</button>
-								</div>
-								
-								<div class="form-group">
-									<label class="cbr-inline">
-										<input type="checkbox" class="cbr" checked>
-										Remember me
-									</label>
-								</div>
-								
-								<div class="form-group pull-right">
-									<button class="btn btn-white btn-single">Create new account</button>
-								</div>
-								
-							</form>
-						
+						{!!$form!!}					
 						</div>
 					</div>
 				
 				</div>
 			</div>
 
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.validator.addMethod("echar", function (value, element) {  
+	    return this.optional(element) || /^[a-zA-Z0-9]+$/.test(value); 
+	}, "只能是英文和字母！"); 
+
+	setTimeout(function(){$('#filedname').rules('add', {required: true,echar:true}); },1000);
+ 	
+});
+
+</script>
 @stop

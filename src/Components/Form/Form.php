@@ -125,4 +125,9 @@ class Form{
         return $this; 
     }
 
+    public function select($config){
+        $this->html.=Native::select($config);
+        return $this; 
+    }
+
 }

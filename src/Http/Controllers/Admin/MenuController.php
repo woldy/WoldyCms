@@ -216,11 +216,26 @@ class MenuController extends Controller
     }
 
 
+    public function getDel(){
+
+        $id=Input::get('id');
+        $item=\Woldy\Cms\Models\MenuModel::find($id);
+        if(!empty($item)){
+            $item->delete();
+        }
+
+        $result=[
+            'errcode'=>0,
+            'errmsg'=>'ok'
+        ];
+        return response()->json($result);
+    }
+
     public function postItem(){
     	$id=intval(Input::get('id'));
         $input = Input::except('_token');
-        $input['display']=$input['display']??'off';
-        $input['enable']=$input['enable']??'off';
+        $input['display']=$input['display']??'on';
+        $input['enable']=$input['enable']??'on';
     	if($id==0){
         	$item = new \Woldy\Cms\Models\MenuModel;
         	$item->pid=0;
@@ -232,5 +247,57 @@ class MenuController extends Controller
             $item->update($input);
     	}
     	return Redirect::back();
+    }
+
+    public function getEdit(){
+        $config=[
+            [
+                'type'=>'form',
+                'attr'=>[
+                    'action'=>'/admin/menu/item',
+                    'method'=>'post',
+                    'novalidate'=>"novalidate"
+                ],
+                'class'=>"validate",
+            ],
+
+            [
+                'type'=>'text',
+                'label'=>'分类名称',
+                'attr'=>[
+                    'name'=>'title',
+                    'id'=>'title',
+                    'data-validate'=>'required',
+                    'data-message-required'=>'请输入标签名称！' 
+ 
+                ],
+            ],
+
+            [
+                'type'=>'submit',
+                'label'=>'增加',
+                'attr'=>[
+                    'class'=>'btn btn-primary btn-single pull-right',
+                    'id'=>'submit',
+                ],
+            ],
+
+            [
+                'type'=>'endform'
+            ],
+
+        ];
+
+
+        $cfgform['attr']=[
+            'action'=>'/admin/menu/list',
+            'mothod'=>'post'
+        ];
+
+        $form=Form::build($config);
+        return Tpl::view('menu.edit','admin',[
+            'form'=>$form,
+            'menu_html'=>''
+        ]);        
     }
 }

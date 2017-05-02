@@ -56,16 +56,10 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$help=$config['help']??'';
  		$help_block=empty($help)?'':"<p class=\"help-block\">{$help}</p>";
-		$label=isset($config['label'])?$config['label']:'';
+		$label=isset($config['label'])?"<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >{$config['label']}</label>":'';
 		$html="	<div class=\"form-group \" >
-					<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >
-						$label
-					</label>
-					<div class=\"{$config['class_div']}\">
 							<input type=\"text\" {$attr}   class=\"form-control {$config['class']}\">
 							{$help_block}
-					</div>
-
 				</div>";
 		return $html;
 	}
@@ -139,7 +133,7 @@ class Native{
 		
 
 		<input type=\"checkbox\" {$attr} class=\"iswitch {$config['class']}\">
-		</div></div>";
+		</div>";
 		return $html;			
 	}
 
@@ -147,6 +141,23 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$html="<input type=\"hidden\" $attr>";
 		return $html;	
+	}
+
+
+	public static function select($config=['attr'=>[]]){
+		$attr=Form::attr($config['attr']);
+ 		$option='';
+ 		$config['option']=$config['option']??[];
+ 		foreach ($config['option'] as $key => $value) {
+ 			 $option.="<option value =\"{$value}\">{$key}</option>";
+ 		}
+
+
+
+		$html="<div class=\"form-group \"><select class=\"form-control\" $attr>{$option}</select></div>";
+
+
+		return $html;			
 	}
 
 }

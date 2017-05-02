@@ -34,11 +34,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 
 	Route::get('/menu/list/{type}', 'Admin\MenuController@getList');
 	Route::post('/menu/sort', 'Admin\MenuController@postSort');
+	Route::get('/menu/del', 'Admin\MenuController@getDel');
+	Route::get('/menu/edit', 'Admin\MenuController@getEdit');
 	Route::get('/menu/item', 'Admin\MenuController@getItem');
 	Route::post('/menu/item', 'Admin\MenuController@postItem');
 
 
-	Route::get('/model/edit/{table}', 'Admin\ModelController@edit');
+	Route::get('/model/edit/{table}', 'Admin\ModelController@getEdit');
+	Route::post('/model/edit/{table}', 'Admin\ModelController@postEdit');
 	Route::get('/model/list', 'Admin\ModelController@getList');
 
 	Route::get('/model/show/{table}', 'Admin\ModelController@getShow');

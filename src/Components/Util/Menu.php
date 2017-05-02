@@ -84,6 +84,7 @@ class Menu{
                                         <div class=\"uk-nestable-handle\"></div>
                                         <div data-nestable-action=\"toggle\"></div>
                                         <div class=\"list-label\">{$tree['title']}</div>
+                                        <a class=\"fa-trash pull-right\" style=\"padding: 10px;display:block\" href=\"javascript:///\">&nbsp;</a>
                                     </div>\n";
                     $tree_html.=self::get_menu_edit_list($type,$tree['sub']);
                     $tree_html.="</li>\n";      
@@ -93,6 +94,7 @@ class Menu{
                                         <div class=\"uk-nestable-handle\"></div>
                                         <div data-nestable-action=\"toggle\"></div>
                                         <div class=\"list-label\">{$tree['title']}</div>
+                                        <a class=\"fa-trash pull-right\" style=\"padding: 10px;\" href=\"javascript:///\">&nbsp;</a>
                                     </div></li>\n";
                 }
             }else{
