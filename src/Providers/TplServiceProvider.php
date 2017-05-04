@@ -1,6 +1,6 @@
 <?php
 
-namespace Woldy\Cms\Components\Util;
+namespace Woldy\Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -14,13 +14,7 @@ class TplServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $this->loadViewsFrom(__DIR__.'/../../views', 'woldycms');
-
-
-        $this->publishes([
-            __DIR__.'/../../views' => base_path('resources/views/woldycms'),
-            __DIR__.'/../../config/tpl.php' => config_path('tpl.php'),
-        ]);
+      //$this->loadViewsFrom(__DIR__.'/../../views', 'woldycms');
     }
 
     /**
@@ -31,7 +25,7 @@ class TplServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['tpl'] = $this->app->share(function ($app) {
-            return new Tpl($app['config']);
+            return new \Woldy\Cms\Components\Util\Tpl($app['config']);
         });
     }
 }

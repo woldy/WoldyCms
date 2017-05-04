@@ -11,13 +11,9 @@
 									<li>
 							<a href="/"><i class="fa-home"></i>首页</a>
 						</li>
-								<li>
-						
-										<a href="extra-gallery.html">Extra</a>
-								</li>
+
 							<li class="active">
-						
-										<strong>Nestable Lists</strong>
+										<strong>{{Tpl::getinfo()['navtitle']??'首页'}}</strong>
 								</li>
 								</ol>
 								

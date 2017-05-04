@@ -1,4 +1,4 @@
-@extends('woldycms::wiki.layout.left')
+@extends('woldycms::admin.layout.left')
 @section('content')
  <style type="text/css">
 .margin-tb-zero,

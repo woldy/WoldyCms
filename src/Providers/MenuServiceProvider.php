@@ -1,11 +1,11 @@
 <?php
 
-namespace Woldy\Cms\Components\Util;
+namespace Woldy\Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 //use View;
 
-class CfgServiceProvider extends ServiceProvider
+class MenuServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -24,8 +24,8 @@ class CfgServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['cfg'] = $this->app->share(function ($app) {
-            return new Cfg();
+        $this->app['menu'] = $this->app->share(function ($app) {
+            return new \Woldy\Cms\Components\Util\Menu();
         });
     }
 }

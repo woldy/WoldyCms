@@ -8,7 +8,7 @@
 				
 					<!-- Add your copyright text here -->
 					<div class="footer-text">
-						&copy; 2014 
+						&copy; 2016-2017
 						<strong>WoldyCMS</strong> 
 					</div>
 					

@@ -1,4 +1,4 @@
-@extends('index.layout.left')
+@extends('woldycms::admin.layout.left')
 @section('content')
 	<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon//uikit/vendor/codemirror/codemirror.css">
 	<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon//uikit/uikit.css">

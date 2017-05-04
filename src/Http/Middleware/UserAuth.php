@@ -23,13 +23,12 @@ class UserAuth
 
     public function handle($request, Closure $next, $guard = null)
     {
- 
+        //return $next($request);
         if ($request->session()->has('user')) {
             return $next($request);
         }else{
-
             $login_url=Cfg::get('login_url');
-                header("Location:{$login_url}");
+            header("Location:{$login_url}");
             exit;
         }
     }

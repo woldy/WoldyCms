@@ -43,6 +43,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 	Route::get('/model/edit/{table}', 'Admin\ModelController@getEdit');
 	Route::post('/model/edit/{table}', 'Admin\ModelController@postEdit');
 	Route::get('/model/list', 'Admin\ModelController@getList');
+	Route::get('/model/config/list/{table}', 'Admin\ConfigController@getList');
+	Route::get('/model/config/form/{table}', 'Admin\ConfigController@getForm');
+
 
 	Route::get('/model/show/{table}', 'Admin\ModelController@getShow');
 	Route::post('/model/addtable', 'Admin\ModelController@postAddtable');

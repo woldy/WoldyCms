@@ -1,6 +1,8 @@
 <?php
 namespace Woldy\Cms\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+use Closure;
 use Woldy\Cms\Http\Controllers\Controller;
 use Tpl;
 class UserController extends Controller
@@ -15,7 +17,11 @@ class UserController extends Controller
     	echo 'test';
     }
 
+    public function show(){
+
+    }
+
     public function login(){
-    	
+
     }
 }

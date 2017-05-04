@@ -1,11 +1,11 @@
 <?php
 
-namespace Woldy\Cms\Components\Form;
+namespace  Woldy\Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 //use View;
 
-class FormServiceProvider extends ServiceProvider
+class CfgServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -24,8 +24,8 @@ class FormServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['form'] = $this->app->share(function ($app) {
-            return new Form();
+        $this->app['cfg'] = $this->app->share(function ($app) {
+            return new \Woldy\Cms\Components\Util\Cfg();
         });
     }
 }
