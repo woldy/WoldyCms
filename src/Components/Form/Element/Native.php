@@ -58,8 +58,11 @@ class Native{
  		$help_block=empty($help)?'':"<p class=\"help-block\">{$help}</p>";
 		$label=isset($config['label'])?"<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >{$config['label']}</label>":'';
 		$html="	<div class=\"form-group \" >{$label}
+						<div class=\"col-sm-10\">
 							<input type=\"text\" {$attr}   class=\"form-control {$config['class']}\">
 							{$help_block}
+						</div>
+							
 				</div>";
 		return $html;
 	}
