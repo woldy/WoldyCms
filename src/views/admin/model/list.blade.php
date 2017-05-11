@@ -49,16 +49,8 @@
 											<th>{{$item['id']}}</th>
 											<td>{{$item['table']}}</td>
 											<td>{{$item['alias']}}</td>
-
-
-
-
-
 											<td>
 												<a href="/admin/mitem/list/{{$item['table']}}" class="btn btn-success btn-sm btn-icon icon-left">数据列表</a>
-												<!-- <a href="/admin/model/config/list/{{$item['table']}}" class="btn btn-orange btn-sm btn-icon icon-left" >数据配置</a> -->
-												<!-- <a href="/admin/model/config/form/{{$item['table']}}"  class="btn btn-turquoise btn-sm btn-icon icon-left">页面配置</a>
-												<a href="/admin/model/config/form/{{$item['table']}}"  class="btn btn-info btn-sm btn-icon icon-left">表单配置</a> -->
 											</td>
 
 											<td>
@@ -67,15 +59,15 @@
 											</td>
 
 											<td>
-											<a href="/admin/model/config/list/{{$item['table']}}" class="btn btn-orange btn-sm btn-icon icon-left" >数据配置</a>
+											<a href="/admin/model/config/list/{{$item['table']}}" class="btn btn-success btn-sm btn-icon icon-left" >列表配置</a>
 											<a href="/admin/model/config/form/{{$item['table']}}"  class="btn btn-info btn-sm btn-icon icon-left">页面配置</a>
-											<a href="/admin/model/config/form/{{$item['table']}}"  class="btn btn-success btn-sm btn-icon icon-left">表单配置</a>
+											<a href="/admin/model/config/form/{{$item['table']}}"  class="btn btn-orange btn-sm btn-icon icon-left">表单配置</a>
 										</td>
-
-
-
 										</tr>
 									@endforeach
+
+
+
 									</tbody>
 								</table>
 

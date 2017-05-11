@@ -1,0 +1,40 @@
+h1,h2,h3,h4,h5{
+	font-weight:700;
+	display: block;
+	color: #333;
+}
+
+p,.panel-body{
+	color: #555 !important;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+	margin: 10px auto;
+}
+
+.min{
+	width:100%;
+	height:auto;
+	position: relative;
+}
+
+.bg{
+    background: #999;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+code a{
+	color: #0e62c7;
+}
+
+code a:hover{
+	color: #0e62c7;
+}

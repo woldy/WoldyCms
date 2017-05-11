@@ -21,7 +21,31 @@ jQuery(document).ready(function($){
 	});
 
 	itemclick();
+
+  $(".fa-trash").click(function(e){
+        id=$(this).parent().parent().attr('data-item-id');
+        delitem(id);
+        e.stopPropagation();
+  });
+
 });
+
+
+
+function delitem(id){
+  $.ajax({
+      type: 'GET',
+      url: '/admin/menu/del',
+      data: {
+        'id':id,
+        '_token':token,
+      },
+      success: function(data){
+        window.location.reload();
+      }
+  });
+}
+
 
 
 
@@ -87,7 +111,21 @@ function getitem(id){
         $("#seotitle").val(data.seotitle);
         $("#navtext").val(data.navtext);
         $("#seotext").val(data.seotext);
-  			$("#submit").html("修改");  		
+
+  			$("#submit").html("修改");  
+
+        if(data.enable=='off'){
+          $("#enable").removeAttr('checked');
+        }else{
+          $("#enable").attr('checked','checked');
+        }
+
+        if(data.display=='off'){
+          $("#display").removeAttr('checked');
+        }else{
+          $("#display").attr('checked','checked');
+        }
+
       }
 	});
 }

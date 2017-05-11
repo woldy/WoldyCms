@@ -1,0 +1,50 @@
+.p_title:hover{
+	color:#68b828;
+}
+
+.count{
+/*	padding-right: 20px;*/
+	text-align: right;
+	font-weight: bold;
+	color: #000;
+}
+
+.count{
+	margin-top: 10px !important;
+	display: block;
+}
+
+button{
+	margin-right: 20px !important;
+}
+button span{
+	padding-right: 5px;
+}
+
+.howto{
+	display: none;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 100;
+}
+
+.howto img{
+	max-width: 100%;
+	height: auto;
+}
+
+.fanben{
+	display: none;
+	float: left;
+	width: 300px;
+}
+
+button{
+	margin-top: 10px;
+}
+
+.panel-body{
+	padding-top: 10px !important;
+}

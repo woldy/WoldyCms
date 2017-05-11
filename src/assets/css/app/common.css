@@ -1,0 +1,13 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+body {	
+	font-family: microsoft yahei;
+}
+
+.col-md-12{
+	padding: 0;
+}

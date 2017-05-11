@@ -32,13 +32,13 @@
 								<table cellspacing="0" class="table table-small-font table-bordered table-striped">
 									<thead>
 										<tr>
-											<th data-priority="1">字段</th>
-											<th data-priority="3">说明</th>
-											<th data-priority="3">显示</th>
-											<th data-priority="3">关联模型</th>
-											<th data-priority="3">关联字段</th>
-											<th data-priority="3">展示字段</th>
-											<th data-priority="3">操作</th>
+											<th data-priority="1" width="14.25%">字段</th>
+											<th data-priority="3" width="14.25%">说明</th>
+											<th data-priority="3" width="10.25%">显示</th>
+											<th data-priority="3" width="15.25%">关联模型</th>
+											<th data-priority="3" width="15.25%">关联字段</th>
+											<th data-priority="3" width="15.25%">展示字段</th>
+											<th data-priority="3" width="14.25%">操作</th>
 
 										</tr>
 									</thead>
@@ -48,19 +48,39 @@
 											<th>{{$item['Field']}}</th>
 											<td>{{$item['Comment']}}</td>
 											<td>
-												<input type="checkbox" name="display" id="display" checked="" class="iswitch iswitch-info"></td>
+											<input type="checkbox" name="display" id="display" checked="" class="iswitch iswitch-info"></td>
 											<td><select class="form-control"><option>test</option></select></td>
 											<td><select class="form-control"><option>test</option></select></td>
-
 											<td><select class="form-control"><option>test</option></select></td>
 											<td>
 												<a href="#" class="btn btn-success btn-sm btn-icon icon-left">上移</a>
 												<a href="#" class="btn btn-orange btn-sm btn-icon icon-left">下移</a>
+												<a class="btn btn-icon btn-sm btn-red">x</a>
 											</td>
-
-
 										</tr>
 									@endforeach
+
+									<tr>
+										<th>
+											<div class="form-group">
+													<input type="text" name="alias" id="alias" class="form-control" placeholder="字段">
+											</div>
+										</th>
+										<td>
+											<div class="form-group">
+													<input type="text" name="alias" id="alias" class="form-control" placeholder="说明">
+											</div>
+										</td>
+										<td>
+										<input type="checkbox" name="display" id="display" checked="" class="iswitch iswitch-info"></td>
+										<td><select class="form-control"><option>test</option></select></td>
+										<td><select class="form-control"><option>test</option></select></td>
+										<td><select class="form-control"><option>test</option></select></td>
+										<td>
+											<a href="#" class="btn btn-info btn-sm btn-icon icon-left">添加</a>
+										</td>
+									</tr>
+
 									</tbody>
 								</table>
 
