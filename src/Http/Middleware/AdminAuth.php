@@ -23,14 +23,13 @@ class AdminAuth
 
     public function handle($request, Closure $next, $guard = null)
     {
- 
+
         if ($request->session()->has('admin')) {
             return $next($request);
         }else{
 
             $login_url=Cfg::get('admin_login_url');
-            header("Location:{$login_url}");
-            exit;
-        }
+            return redirect($login_url);
+	}
     }
 }
