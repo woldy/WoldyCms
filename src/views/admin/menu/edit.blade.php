@@ -56,9 +56,9 @@
 		</div>
 	</div>
 <link rel="stylesheet" href="{{$static_base}}/assets/css/xenon-components.css">
-<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon/uikit/uikit.css">
-<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>
-<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/addons/nestable.min.js"></script>
-<script src="{{$static_base}}/assets/js/woldycms/xenon/jquery-validate/jquery.validate.min.js"></script>
+<link rel="stylesheet" href="{{$static_base}}/js/xenon/uikit/uikit.css">
+<script src="{{$static_base}}/js/xenon/uikit/js/uikit.min.js"></script>
+<script src="{{$static_base}}/js/xenon/uikit/js/addons/nestable.min.js"></script>
+<script src="{{$static_base}}/js/xenon/jquery-validate/jquery.validate.min.js"></script>
 
 @stop

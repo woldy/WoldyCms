@@ -1,0 +1,679 @@
+/* 财务共享平台 */
+.default_search{
+	float: left;
+	width: 100%;
+	height: 45px;
+	background-color: #eee;
+}
+.default_search_btn{
+	float: left;
+	width: 95%;
+	height: 25px;
+	margin-left: 2.5%;
+	background-color: #fff;
+	border-radius: 5px;
+	margin-top: 10px;
+	font-size: 14px;
+	text-align: center;
+	color: #bbb;
+	border: 1px solid #ddd;
+}
+.default_search_btn:link{
+	color: #bbb;
+}
+.default_search_btn:hover{
+	color: #bbb;
+}
+.default_search_btn:visited{
+	color: #bbb;
+}
+.default_search_btn:active{
+	color: #bbb;
+}
+
+.default_search_icon{
+	width: 13px;
+	height: 13px;
+	margin-top: -2px;
+}
+.default_banner{
+	float: left;
+	width: 100%;
+}
+.default_banner_img{
+	height: 145px;
+}
+.default_c_menu{
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+}
+.default_c_menu ul{
+	width: 100%;
+	height: 70px;
+	margin: 0px;
+	padding: 0px;
+}
+.default_c_menu ul li{
+	float: left;
+	list-style: none;
+	width: 25%;
+	height: 70px;
+	margin: 0px;
+	padding: 0px;
+}
+.default_c_menu a{
+	width: 100%;
+	height: 70px;
+	display: block;
+	font-size: 12px;
+	color: #000;
+	text-align: center;
+}
+.default_c_m_icon{
+	width: 20px;
+	height: 20px;
+}
+.default_c_m_t{
+	float: left;
+	width: 100%;
+	height: 20px;
+	margin-top: 10px;
+}
+.default_list_title{
+	float: left;
+	width: 100%;
+	height: 35px;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #000;
+	background-color: #eee;
+	line-height: 35px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding-left: 10px;
+}
+.default_list{
+	float: left;
+	width: 100%;
+}
+.default_list a{
+	color: #000;
+}
+.default_list ul{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.default_list ul li{
+	float: left;
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	color: #000;
+	list-style: none;
+	line-height: 50px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+}
+/* 我要提问 */
+.questions_body{
+	background-color: #eee;
+}
+.questions_content{
+	float: left;
+	width: 100%;
+	background-color: #fff;
+}
+.questions_top{
+	float:  left;
+	width:  100%;
+	height:  auto;
+	min-height:  90px;
+	margin-top:  10px;
+	padding-bottom:  10px;
+	background-color:  #fff;
+	border-bottom:  1px  solid  #ddd;
+}
+.q_t_left{
+	float: left;
+	width: 20%;
+	height: 100px;
+	text-align: center;
+}
+.q_t_head{
+	width: 45px;
+	height: 45px;
+	margin-top: 10px;
+}
+.q_t_name{
+	float: left;
+	width: 100%;
+	font-size: 14px;
+}
+.q_t_right{
+	float: right;
+	width: 80%;
+}
+.q_t_bubble{
+	float: left;
+	width: 95%;
+	height: 90px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+}
+
+.q_t_bubble_arrow {
+    width: 5px;
+    height: 10px;
+    margin-left: -5px;
+    margin-top: 20px;
+}
+.q_t_b_arrow{
+	width: 5px;
+	height: 10px;
+}
+.q_t_b_txt{
+	width: 90%;
+	font-size: 15px;
+	margin-top: -40px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+/* 表单 */
+.q_f_d{
+	float:  left;
+	width:  100%;
+	height:  auto;
+	min-height:  50px;
+	background-color:  #fff;
+	border-bottom:  1px  solid  #ddd;
+}
+.q_f_d_title{
+	float:  left;
+	height:  50px;
+	margin-left:  10px;
+	font-size:  16px;
+	line-height:  50px;
+	white-space:  nowrap;
+	text-overflow:  ellipsis;
+}
+.q_f_d_s{
+	float: right;
+	height: 50px;
+	text-align: right;
+	line-height: 50px;
+	margin-right: 10px;
+}
+.q_f_d_sel{
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	margin-right:  10px;
+	font-size:  13px;
+	line-height:  40px;
+	color:  #787878;
+	height:  40px;
+	outline:  none;
+	border:  none;
+	background-color:  #FFF;
+}
+.q_f_d_arrow{
+	float: right;
+	width: 7.5px;
+	height: 12.5px;
+}
+.q_f_d_arrow_icon{
+	width: 7.5px;
+	height: 12.5px;
+}
+.questions_interval{
+	float: left;
+	width: 100%;
+	height: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.q_f_d_tf{
+	float:  left;
+	height:  40px;
+	margin-top:  5px;
+	margin-left:  10px;
+	font-size:  15px;
+	color:  #adadad;
+	width:  60%;
+	border:  0px;
+	overflow:  hidden;
+	white-space:  nowrap;
+	text-overflow:  ellipsis;
+}
+.q_erweima{
+	float:  right;
+	width:  20px;
+	height:  18px;
+	margin:  10px;
+}
+.q_erweima_icon{
+	width: 20px;
+	height: 18px;
+}
+.q_f_d_b{
+	position:  relative;
+	float:  left;
+	width:  100%;
+	height:  auto;
+	min-height:  100px;
+	border-bottom:  1px  solid  #ddd;
+}
+.q_f_d_textarea{
+	float: left;
+	width: 75%;
+	height: 60px;
+	margin-top: 10px;
+	font-size: 15px;
+	color: #adadad;
+	border: 0px;
+	resize: none;
+}
+.q_f_d_t_x{
+	position:  absolute;
+	bottom:5px;
+	right:5px;
+	font-size:  14px;
+	color:  #adadad;
+	text-align:  right;
+}
+.q_f_photo{
+	float: right;
+	width: 24px;
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.q_f_photo_icon{
+	width: 24px;
+	height: 20px;
+}
+.q_f_submit_btn{
+	float:  left;
+	width:  96%;
+	margin-top:  20px;
+	margin-left:  2%;
+	margin-bottom:  20px;
+	height:  50px;
+	font-size:  18px;
+	color:  #fff;
+	background-color:  #1db1ed;
+	border-radius:  5px;
+	border:  0px;
+	text-align:  center;
+	line-height:  50px;
+}
+/* 问题提交成功 */
+.qs_top{
+	float: left;
+	width: 100%;
+}
+.qs_info{
+	width: 55px;
+	margin: auto;
+	text-align: center;
+	margin-top: 35px;
+}
+.qs_t_head{
+	float: left;
+	width: 55px;
+	height: 55px;
+}
+.qs_t_name{
+	float: left;
+	width: 55px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.qs_tips{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 35px;
+}
+.qs_tips_icon{
+	width: 20px;
+	height: 20px;
+	margin-top: -2px;
+}
+.qs_tips_name{
+	font-size: 15px;
+	color: #1db1ed;
+	margin-left: 10px;
+}
+.qs_remak{
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #555;
+	margin-top: 35px;
+}
+.qs_bottom{
+    text-align: center;
+    border-radius: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 55px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ccc;
+}
+.qs_btn{
+	width: 100%;
+	height: 55px;
+	display: block;
+	font-size: 17px;
+	color: #1db1ed;
+	line-height: 55px;
+}
+/* 我的提问列表 */
+.ql_list{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	margin-bottom: 55px;
+}
+.ql_list ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+.ql_list ul li{
+	float: left;
+	width: 100%;
+	list-style: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+.ql_list_top{
+	float: left;
+	width: 100%;
+}
+
+.ql_list_no{
+	float: left;
+	font-size: 15px;
+	color: #888;
+	word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.ql_list_new{
+	float: right;
+	width: 50px;
+	background-color: #ff8338;
+	border-radius: 10px;
+	font-size: 10px;
+	height: 20px;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	margin-top: 3px;
+}
+.ql_list_time{
+	float: right;
+	font-size: 13px;
+	color: #888;
+}
+
+/* 我要提问详情 */
+.qi_btn{
+	float: left;
+	display: block;
+	width: 90%;
+	margin-left: 5%;
+	height: 30px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-size: 15px;
+	color: #000;
+	margin-top: 10px;
+	border-radius: 15px;
+	line-height: 30px;
+}
+.qi_top{
+	float: left;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.qi_user_info{
+	float: left;
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #ddd;
+	line-height: 60px;
+}
+.qi_t_head{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+.qi_t_name{
+	width: 200px;
+	height: 40px;
+	margin-left: 10px;
+	font-size: 15px;
+}
+.qi_t_time{
+	float: right;
+	font-size: 13px;
+	color: #888;
+}
+.qi_content_info{
+	float: left;
+	width: 100%;
+	padding-top: 15px;
+	font-size: 15px;
+	line-height: 30px;
+}
+.qi_c_p_img{
+	width: 75px;
+	height: 60px;
+}
+.qi_c_p_title{
+	float: left;
+}
+.qi_content_photo{
+	float: left;
+	width: 100%;
+	height: 90px;
+}
+.qi_content_photo ul{
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 8px;
+}
+.qi_content_photo ul li{
+	float: left;
+	list-style: none;
+	width: 90px;
+}
+.qi_q_list{
+	float: left;
+	width: 100%;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+.qi_q_list ul{
+	margin: 0px;
+	padding: 0px;
+}
+.qi_q_list ul li{
+	float: left;
+	width: 100%;
+	list-style: none;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.qi_q_l_content{
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.qi_padding{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* 问题回复 */
+.qr_text{
+	float: left;
+	width: 100%;
+	height: 115px;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.qr_textarea{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	font-size: 16px;
+	color: #b1b1b1;
+	resize:none;
+}
+.qr_photo{
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+}
+.ql_list_link{
+	display: block;
+	float: left;
+	width: 100%;
+	height: 50px;
+	color: #000;
+}
+
+
+
+.tech_support{
+  float: left;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #eee;
+
+}
+.tech_support_img{
+  margin: auto;
+  width: 161px;
+  height: 11px;
+  margin-top: 10px;
+  background-image: url(/assets/images/app/finance/tech_support.png);
+  background-repeat:no-repeat;
+  background-size: 161px 11px;
+}
+
+
+.qi_report_photo{
+  float: left;
+  width: 100%;
+}
+.qi_report_photo ul{
+  margin: 0px;
+  padding: 0px;
+}
+.qi_report_photo ul li{
+  margin-left: 10px;
+  list-style: none;
+  width: 75px;
+}
+
+.q_f_submit_btn:link{background-color: #1db1ed;}
+.q_f_submit_btn:hover{background-color: #1688bb;}
+.ql_list_title {
+	width: 80%;
+	font-size: 17px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	height: 26px;
+	overflow-y: hidden;
+}
+
+.default_list a {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.ql_none{
+	text-align: center;
+	margin-top: 30px;
+}
+
+
+.q_f_submit_btn:link{
+        color:#fff;
+}
+.q_f_submit_btn:hover{
+        color:#fff;
+}
+.q_f_submit_btn:visited{
+        color:#fff;
+}
+.q_f_submit_btn:active{
+        color:  #fff;
+        background-color:  #1688bb;
+}
+
+.img_up{
+		float: left;
+		width: 100%;
+		margin-top: 10px;
+}
+
+.img_wp{
+	width:31%;
+	margin:1%;
+	max-width:300px;
+	position:relative;
+	border: 10px solid #fff;
+	float: left;
+}
+.img_wp span{
+	width: 20px;
+	height: 20px;
+	background-image: url('/assets/images/app/finance/clearImg.png');
+	background-size: cover;
+	display: block;
+	float: right;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	z-index: 100;
+
+}

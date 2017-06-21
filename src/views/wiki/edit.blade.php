@@ -1,8 +1,8 @@
 @extends('woldycms::admin.layout.left')
 @section('content')
-	<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon//uikit/vendor/codemirror/codemirror.css">
-	<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon//uikit/uikit.css">
-	<link rel="stylesheet" href="{{$static_base}}/assets/js/woldycms/xenon//uikit/css/addons/uikit.almost-flat.addons.min.css">
+	<link rel="stylesheet" href="{{$static_base}}/js/xenon//uikit/vendor/codemirror/codemirror.css">
+	<link rel="stylesheet" href="{{$static_base}}/js/xenon//uikit/uikit.css">
+	<link rel="stylesheet" href="{{$static_base}}/js/xenon//uikit/css/addons/uikit.almost-flat.addons.min.css">
 	<style type="text/css">
 		.main-content{
 			padding: 0 30px !important;
@@ -41,10 +41,10 @@
 
  
  </div>
- 	<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/vendor/codemirror/codemirror.js"></script>
-	<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/vendor/marked.js"></script>
-	<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/uikit.min.js"></script>
-	<script src="{{$static_base}}/assets/js/woldycms/xenon/uikit/js/addons/htmleditor.min.js"></script>
+ 	<script src="{{$static_base}}/js/xenon/uikit/vendor/codemirror/codemirror.js"></script>
+	<script src="{{$static_base}}/js/xenon/uikit/vendor/marked.js"></script>
+	<script src="{{$static_base}}/js/xenon/uikit/js/uikit.min.js"></script>
+	<script src="{{$static_base}}/js/xenon/uikit/js/addons/htmleditor.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 	 		var htmleditor = $.UIkit.htmleditor($('textarea'), {markdown:true,height:$(window).height()-270});

@@ -19,12 +19,12 @@ class Tpl{
 		$config=self::getconf($type.'_cfg');
 		$val['version']=$config['version']??'';
 		$val['static']=[
-			'css'=>"/assets/css/{$type}/".str_replace('.', '/', $tpl).'.css',
-			'js'=>"/assets/js/{$type}/".str_replace('.', '/', $tpl).'.js'
+			'css'=>"/css/{$type}/".str_replace('.', '/', $tpl).'.css',
+			'js'=>"/js/{$type}/".str_replace('.', '/', $tpl).'.js'
 		];
 		$val=array_merge($val,$config);
 		$layout=$config['tpl_base'].'.'.$tpl;
-	    return view($layout,$val);	 
+	    return view($layout,$val);
 	}
 
 
@@ -35,7 +35,7 @@ class Tpl{
 	}
 
 	public static function getinfo(){
-		$urlpath='/'.urldecode(Request::path()); 
+				$urlpath='/'.urldecode(Request::path());
         $info=MenuModel::where('url','=',$urlpath)->first();
         if(!empty($info)){
         	$info=$info->toarray();
@@ -47,5 +47,5 @@ class Tpl{
 		$config=self::getconf($type.'_cfg');
 		return $config['static_base'];
 	}
- 
-} 
+
+}

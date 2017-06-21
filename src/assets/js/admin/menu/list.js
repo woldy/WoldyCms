@@ -75,7 +75,7 @@ function getitem(id){
   		url: '/admin/menu/item',
   		data: {
   			id:id,
-  			'_token':token,
+  			'_token':"<?php echo csrf_token(); ?>",
   		},
   		success: function(data){
   			$("#id").val(data.id);
