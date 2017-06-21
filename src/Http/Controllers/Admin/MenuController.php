@@ -32,11 +32,12 @@ class MenuController extends Controller
            			'name'=>'title',
            			'id'=>'title',
            			'data-validate'=>'required',
-					'data-message-required'=>'请输入标签名称！' 
- 
+					'data-message-required'=>'请输入标签名称！'
+
     			],
+          'p_class'=>'',
     		],
- 
+
     		[
     			'type'=>'text',
     			'label'=>'连接',
@@ -44,6 +45,7 @@ class MenuController extends Controller
            			'name'=>'url',
            			'id'=>'url',
     			],
+          'p_class'=>'',
     		],
 
     		[
@@ -53,6 +55,7 @@ class MenuController extends Controller
            			'name'=>'icon',
            			'id'=>'icon',
     			],
+          'p_class'=>'',
     		],
 
     		[
@@ -62,6 +65,7 @@ class MenuController extends Controller
            			'name'=>'class',
            			'id'=>'class',
     			],
+          'p_class'=>'',
     		],
 
             [
@@ -71,6 +75,7 @@ class MenuController extends Controller
                     'name'=>'navtitle',
                     'id'=>'navtitle',
                 ],
+                'p_class'=>'',
             ],
 
             [
@@ -80,6 +85,7 @@ class MenuController extends Controller
                     'name'=>'navtext',
                     'id'=>'navtext',
                 ],
+                'p_class'=>'',
             ],
 
             [
@@ -89,6 +95,7 @@ class MenuController extends Controller
                     'name'=>'seotitle',
                     'id'=>'seotitle',
                 ],
+                'p_class'=>'',
             ],
 
             [
@@ -98,7 +105,8 @@ class MenuController extends Controller
                     'name'=>'seotext',
                     'id'=>'seotext',
                 ],
-            ],                       
+                'p_class'=>'',
+            ],
 
             [
                 'type'=>'iSwitch',
@@ -162,7 +170,7 @@ class MenuController extends Controller
         ];
 
         $listform=Form::build($config);
- 
+
     	//Form::init($cfgform)->show();
     	//$form->show();
     	//Menu::show();
@@ -268,8 +276,8 @@ class MenuController extends Controller
                     'name'=>'title',
                     'id'=>'title',
                     'data-validate'=>'required',
-                    'data-message-required'=>'请输入标签名称！' 
- 
+                    'data-message-required'=>'请输入标签名称！'
+
                 ],
             ],
 
@@ -298,6 +306,6 @@ class MenuController extends Controller
         return Tpl::view('menu.edit','admin',[
             'form'=>$form,
             'menu_html'=>''
-        ]);        
+        ]);
     }
 }

@@ -16,7 +16,7 @@ class Native{
 		$html="
 <div class=\"row\">
 	<form role=\"form\" $attr class=\"{$config['class']}\">";
-		return $html;		
+		return $html;
 	}
 
 	/**
@@ -55,11 +55,15 @@ class Native{
 	public static function text($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
 		$help=$config['help']??'';
+		$config['p_class']=$config['p_class']??'col-sm-10';
  		$help_block=empty($help)?'':"<p class=\"help-block\">{$help}</p>";
 		$label=isset($config['label'])?"<label class=\"{$config['class_label']} control-label \"  for=\"field-1\" >{$config['label']}</label>":'';
 		$html="	<div class=\"form-group \" >{$label}
+						<div class=\"{$config['p_class']}\">
 							<input type=\"text\" {$attr}   class=\"form-control {$config['class']}\">
 							{$help_block}
+						</div>
+
 				</div>";
 		return $html;
 	}
@@ -97,7 +101,7 @@ class Native{
 						$label
 					</label>
 					<div class=\"{$config['class_div']}\">
-							
+
 					<textarea type=\"text\" {$attr}  class=\"form-control {$config['class']}\"></textarea>
 					</div>
 				</div>";
@@ -111,7 +115,7 @@ class Native{
 		$html="<div class=\"form-group\">
 					<button type=\"button\" $attr class=\"{$config['class']}\" >$label</button>
 				</div>";
-		return $html;		
+		return $html;
 	}
 
 	public static function submit($config=['attr'=>[]]){
@@ -122,7 +126,7 @@ class Native{
 					<button type=\"submit\" $attr class=\"{$config['class']}\" >$label</button>
 					</div>
 			</div>";
-		return $html;		
+		return $html;
 	}
 
 
@@ -130,17 +134,17 @@ class Native{
 		$attr=Form::attr($config['attr']);
 		$label=isset($config['label'])?$config['label']:'';
 		$html="<div class=\"form-group\"><label class=\"col-sm-6 control-label\">{$label}</label>
-		
+
 
 		<input type=\"checkbox\" {$attr} class=\"iswitch {$config['class']}\">
 		</div>";
-		return $html;			
+		return $html;
 	}
 
 	public static function hidden($config=['attr'=>[]]){
 		$attr=Form::attr($config['attr']);
 		$html="<input type=\"hidden\" $attr>";
-		return $html;	
+		return $html;
 	}
 
 
@@ -157,7 +161,7 @@ class Native{
 		$html="<div class=\"form-group \"><select class=\"form-control\" $attr>{$option}</select></div>";
 
 
-		return $html;			
+		return $html;
 	}
 
 }
