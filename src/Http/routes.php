@@ -1,9 +1,9 @@
 <?php
- 
+
 
 //Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Http\Middleware\Admin'], function() {
 //
- 
+
 
 
 
@@ -19,7 +19,7 @@ Route::get('/res', 'Woldy\ResController@res');
 // // 	Route::get('/', function(){
 // // 		return Redirect::to('index/index');
 // // 	});
-	
+
 // // });
 
 
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 
 	Route::get('/model/show/{table}', 'Admin\ModelController@getShow');
 	Route::post('/model/addtable', 'Admin\ModelController@postAddtable');
-	Route::post('/model/deltable', 'Admin\ModelController@postDeltable');		
+	Route::post('/model/deltable', 'Admin\ModelController@postDeltable');
 
 	Route::get('/category/list', 'Admin\CategoryController@getList');
 });
@@ -64,9 +64,8 @@ Route::group(['prefix' => 'auth'], function() {
 	Route::resource('/user', 'Auth\UserController');
 });
 
-Route::group(['middleware' => ['auth.user']], function(){
+Route::group(['middleware' => ['\Woldy\Cms\Http\Middleware\WikiAuth::class']], function(){
 	Route::get('/wiki/{name}', 'Wiki\IndexController@show');
 	Route::get('/wiki/edit/{name}', 'Wiki\EditController@show');
 	Route::post('/wiki/edit/{name}', 'Wiki\EditController@store');
 });
-

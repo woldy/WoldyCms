@@ -1,20 +1,20 @@
-@include('woldycms::admin.common.header')
-@include('woldycms::admin.common.setting')
+@include('woldycms::xenon.common.header')
+@include('woldycms::xenon.common.setting')
 	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
 		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
 		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
 		<div class="sidebar-menu toggle-others collapsed">
-			@include('woldycms::admin.common.sidebar')	
+			@include('woldycms::xenon.common.sidebar')	
 		</div>
 		<div class="main-content">
-			@include('woldycms::admin.common.utop')	
-			@include('woldycms::admin.common.nav')
+			@include('woldycms::xenon.common.utop')	
+			@include('woldycms::xenon.common.nav')
 			@include($template)	
-			@include('woldycms::admin.common.footer')	
+			@include('woldycms::xenon.common.footer')	
 		</div>
-		@include('woldycms::admin.common.chat')	
+		@include('woldycms::xenon.common.chat')	
 	</div>
-@include('woldycms::admin.common.debug')
-@include('woldycms::admin.common.bottom')
-@include('woldycms::admin.common.js')
+@include('woldycms::xenon.common.debug')
+@include('woldycms::xenon.common.bottom')
+@include('woldycms::xenon.common.js')

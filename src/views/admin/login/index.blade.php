@@ -22,7 +22,7 @@
 
 					<div class="login-header">
 						<a href="dashboard-1.html" class="logo">
-							<img src="{{$static_base}}/images/logo@2x.png" alt="" width="180" />
+							<img src="{{$logo2x}}" alt="" width="180" />
 							<span>后台登录</span>
 						</a>
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Cfg;
 use User;
 
-class UserAuth
+class WikiAuth
 {
     /**
      * Handle an incoming request.

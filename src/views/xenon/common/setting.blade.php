@@ -21,7 +21,7 @@
 						<div class="user-details">
 
 							<h3>
-								<a href="extra-profile.html">John Smith</a>
+								<a href="extra-profile.html">{{User::getUser()['name']??'造物神'}}</a>
 
 								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
 								<span class="user-status is-online"></span>
@@ -30,8 +30,8 @@
 							<p class="user-title">Web Developer</p>
 
 							<div class="user-links">
-								<a href="extra-profile.html" class="btn btn-primary">Edit Profile</a>
-								<a href="extra-profile.html" class="btn btn-success">Upgrade</a>
+								<a href="/user/profile" class="btn btn-primary">个人资料</a>
+								<a href="/logout" class="btn btn-success">更新设置</a>
 							</div>
 
 						</div>
@@ -44,25 +44,21 @@
 
 					<div class="links-block left-sep">
 						<h4>
-							<span>Notifications</span>
+							<span>通知</span>
 						</h4>
 
 						<ul class="list-unstyled">
 							<li>
 								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk1" />
-								<label for="sp-chk1">Messages</label>
+								<label for="sp-chk1">消息</label>
 							</li>
 							<li>
 								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk2" />
-								<label for="sp-chk2">Events</label>
+								<label for="sp-chk2">事件</label>
 							</li>
 							<li>
 								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk3" />
-								<label for="sp-chk3">Updates</label>
-							</li>
-							<li>
-								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk4" />
-								<label for="sp-chk4">Server Uptime</label>
+								<label for="sp-chk3">更新</label>
 							</li>
 						</ul>
 					</div>
@@ -70,7 +66,7 @@
 					<div class="links-block left-sep">
 						<h4>
 							<a href="#">
-								<span>Help Desk</span>
+								<span>帮助中心</span>
 							</a>
 						</h4>
 
@@ -78,25 +74,25 @@
 							<li>
 								<a href="#">
 									<i class="fa-angle-right"></i>
-									Support Center
+									使用帮助
 								</a>
 							</li>
 							<li>
 								<a href="#">
 									<i class="fa-angle-right"></i>
-									Submit a Ticket
+									反馈建议
 								</a>
 							</li>
 							<li>
 								<a href="#">
 									<i class="fa-angle-right"></i>
-									Domains Protocol
+									联系我们
 								</a>
 							</li>
 							<li>
 								<a href="#">
 									<i class="fa-angle-right"></i>
-									Terms of Service
+									服务条款
 								</a>
 							</li>
 						</ul>

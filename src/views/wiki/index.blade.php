@@ -1,4 +1,4 @@
-@extends('woldycms::admin.layout.left')
+@extends($tpl_layout)
 @section('content')
  <style type="text/css">
 .margin-tb-zero,

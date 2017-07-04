@@ -1,4 +1,4 @@
-@extends('woldycms::admin.layout.left')
+@extends($tpl_layout)
 @section('content')
 	<link rel="stylesheet" href="{{$static_base}}/js/xenon//uikit/vendor/codemirror/codemirror.css">
 	<link rel="stylesheet" href="{{$static_base}}/js/xenon//uikit/uikit.css">
