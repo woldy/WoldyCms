@@ -9,7 +9,6 @@
 			@include('woldycms::xenon.common.sidebar')	
 		</div>
 		<div class="main-content">
-			@include($template)	
 			@include('woldycms::xenon.common.footer')
 		</div>
 		@include('woldycms::xenon.common.chat')	

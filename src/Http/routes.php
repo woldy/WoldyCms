@@ -1,35 +1,15 @@
 <?php
 
+Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\AdminAuth::class'], function() {
 
-//Route::group(['prefix' => 'admin', 'middleware' => 'Woldy\Cms\Http\Middleware\Admin'], function() {
-//
-
-
-
-
-Route::get('/font/{font}','Woldy\ResController@font');
-Route::get('/fonts/{font}','Woldy\ResController@font');
-Route::get('/res', 'Woldy\ResController@res');
-
-
-
-// Route::resource('index', 'Portal\IndexController');
-
-// // Route::group(['prefix' => 'index'], function() {
-// // 	Route::get('/', function(){
-// // 		return Redirect::to('index/index');
-// // 	});
-
-// // });
-
-
-
-Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
-	// Route::get('/', function(){
-	// 	return Redirect::to('admin/index');
-	// });
 	Route::get('/', 'Admin\IndexController@index');
 	Route::resource('index', 'Admin\IndexController');
+
+
+	Route::get('/setting/{type}', 'Admin\SettingController@index');
+
+
+
 
 
 	Route::get('/menu/list/{type}', 'Admin\MenuController@getList');
@@ -55,13 +35,31 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.admin'], function() {
 });
 
 
+
+
+//TODO
+Route::group(['prefix' => 'user','middleware' => '\Woldy\Cms\Http\Middleware\UserAuth::class'], function() {
+	Route::get('/', 'User\ProfileController@index');
+	Route::resource('index', 'User\ProfileController');
+
+
+
+	Route::resource('profile', 'User\ProfileController');//TODO
+	Route::resource('reg', 'User\RegController');//TODO
+	Route::resource('reset', 'User\LoginController');//TODO
+});
+
+
+
+
+
+
 Route::group(['prefix' => 'auth'], function() {
-	// Route::get('/', function(){
-	// 	return Redirect::to('user/login');
-	// });
 	Route::resource('/', 'Auth\UserController@login');
 	Route::resource('/admin/login', 'Auth\AdminController');
-	Route::resource('/user', 'Auth\UserController');
+	Route::resource('/user/login', 'Auth\UserController');
+	Route::resource('/user/reg', 'Auth\RegController');
+	Route::get('logout', 'Auth\UserController@logout');
 });
 
 Route::group(['middleware' => ['\Woldy\Cms\Http\Middleware\WikiAuth::class']], function(){

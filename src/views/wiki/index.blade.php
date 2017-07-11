@@ -247,19 +247,19 @@
 </style>
 <div class="row">
 				<div class="col-md-3">
-				
+
 				<div id="toc" class="tocify" style="width: 183px;"></div>
-					
+
 				</div>
-				
+
 				<div class="col-md-9  markdown-body" style="display: none;">
 					<div class="edit-wp"><span class="edit">{{$author_name}}&nbsp;更新于&nbsp;{{$updated_at}}&nbsp;&nbsp;&nbsp;<a href="/wiki/edit/{{$name}}">编辑</a></span></div>
-					
-					
+
+
 					<div class="tocify-content" >{{html_entity_decode($content)}}</div>
-					
+
 				</div>
-				
+
 </div>
 
 <script type="text/javascript">
@@ -277,6 +277,6 @@ $(document).ready(function(){
 
 
 </script>
-		 
- 
+
+
 @stop

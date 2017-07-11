@@ -1,19 +1,18 @@
 <?php
 namespace Woldy\Cms\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+use Closure;
 use Woldy\Cms\Http\Controllers\Controller;
 use Tpl;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Response;
 use User;
-class AdminController extends Controller
+class RegController extends Controller
 {
     public function index(){
-    	//Menu::show();
-    	return Tpl::view('login.index','admin');
-
+    	return Tpl::view('reg.index','user');
     }
-
 
     public static function store(){
     	$username=Input::get('username');
@@ -22,7 +21,7 @@ class AdminController extends Controller
     		$result=[
     			'errcode'=>0,
     			'errmsg'=>'',
-    			'url'=>'/admin/index'
+    			'url'=>'/'
     		];
     	}else{
     		$result=[
@@ -33,4 +32,6 @@ class AdminController extends Controller
 
     	return response()->json($result);
     }
+
+
 }

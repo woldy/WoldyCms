@@ -3,7 +3,7 @@ namespace Woldy\Cms\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
-use Cfg;
+use Setting;
 use User;
 
 class AdminAuth
@@ -28,7 +28,7 @@ class AdminAuth
             return $next($request);
         }else{
 
-            $login_url=Cfg::get('admin_login_url');
+            $login_url=Setting::get('admin_login_url');
             return redirect($login_url);
 	}
     }

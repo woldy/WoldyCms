@@ -1,4 +1,4 @@
-@extends('woldycms::admin.layout.left')
+@extends($tpl_layout)
 @section('content')
 			<div class="row">
 				<div class="col-md-12">

@@ -10,7 +10,7 @@
                         </a>
 
                         <a href="/" class="logo-collapsed">
-                            <img src="{{$static_base}}/images/logo-collapsed@2x.png" width="40" alt="" />
+                            <img src="{{$logo_c??$static_base.'/images/logo-collapsed@2x.png'}}" width="40" alt="" />
                         </a>
                     </div>
 
@@ -27,12 +27,13 @@
                     </div>
 
                     <!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
+                    @if(User::getUser())
                     <div class="settings-icon">
                         <a href="#" data-toggle="settings-pane" data-animate="true">
                             <i class="linecons-cog"></i>
                         </a>
                     </div>
-
+                    @endif
 
                 </header>
 

@@ -9,7 +9,7 @@
     <meta name="description" content="{{Tpl::getinfo()['seotext']??''}}" />
     <meta name="author" content="woldy" />
 
-    <title> {{Cfg::get('site_title')}}{{Tpl::getinfo()['seotitle']??''}}</title>
+    <title> {{Setting::get('site_title')}}{{Tpl::getinfo()['seotitle']??''}}</title>
 
     @foreach ($common_css as $css)
         <link rel="stylesheet" href="{{$static_base}}{{$css}}?ver={{$version}}">
@@ -22,7 +22,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-     <link rel="stylesheet" href="{{$static_base}}{{$static['css']}}?ver={{$version}}">
+     <link rel="stylesheet" href="{{$static_url}}{{$static['css']}}?ver={{$version}}">
      <script src="{{$static_base}}{{$static['js']}}?ver={{$version}}"></script>
 </head>
 <body class="page-body">

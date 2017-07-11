@@ -10,6 +10,7 @@
 						</a>
 					</li>
 
+@if(User::getUser())
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-envelope-o"></i>
@@ -42,7 +43,6 @@
 							</li>
 						</ul>
 					</li>
-
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-bell-o"></i>
@@ -84,7 +84,7 @@
 
 						</ul>
 					</li>
-
+@endif
 				</ul>
 
 
@@ -105,11 +105,19 @@
 
 					</li>
 
+
+					@if(empty(User::getUser()))
+					<li><a href="/auth/user/reg" style="margin-top:2px;padding:30px 10px;">注册</a></li>
+					<li><a style="padding:30px 0px">|</a></li>
+					<li><a href="/auth/user/login" style="margin-top:2px;padding:30px 10px;">登陆</a></li>
+
+					<li><a></a></li>
+					@else
 					<li class="dropdown user-profile">
 						<a href="#" data-toggle="dropdown">
 							<img src="{{empty(User::getUser()['avatar'])?$static_base.'/images/user-4.png':User::getUser()['avatar']}}" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 							<span>
-								{{User::getUser()['name']??'造物神'}}
+								{{User::getUser()['nickname']??Setting::get('guest_name')}}
 								<i class="fa-angle-down"></i>
 							</span>
 						</a>
@@ -121,6 +129,14 @@
 									个人资料
 								</a>
 							</li>
+							@if(User::getUser()['is_admin']==1)
+							<li>
+								<a href="/admin/index">
+									<i class="fa-cog"></i>
+									管理后台
+								</a>
+							</li>
+							@endif
 							<li>
 								<a href="/wiki/help">
 									<i class="fa-info"></i>
@@ -128,11 +144,12 @@
 								</a>
 							</li>
 							<li class="last">
-								<a href="/user/logout">
+								<a href="/auth/logout">
 									<i class="fa-lock"></i>
 									退出登陆
 								</a>
 							</li>
+						@endif
 						</ul>
 					</li>
 

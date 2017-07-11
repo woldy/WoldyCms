@@ -25,7 +25,7 @@ class wCmsServiceProvider extends ServiceProvider
     {
         $this->app->register(\Woldy\Cms\Http\RouteServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\TplServiceProvider::class);
-        // $this->app->register(\Woldy\Cms\Providers\CfgServiceProvider::class);
+        // $this->app->register(\Woldy\Cms\Providers\SettingServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\MenuServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\UserServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\FormServiceProvider::class);
@@ -34,7 +34,7 @@ class wCmsServiceProvider extends ServiceProvider
        $this->app->booting(function(){
             $loader=\Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias('Tpl','Woldy\Cms\Facades\Tpl');
-            $loader->alias('Cfg','\Woldy\Cms\Components\Util\Cfg');
+            $loader->alias('Setting','\Woldy\Cms\Components\Util\Setting');
             $loader->alias('Menu','\Woldy\Cms\Components\Util\Menu');
             $loader->alias('User','\Woldy\Cms\Components\User\User');
             $loader->alias('Form','\Woldy\Cms\Components\Form\Form');

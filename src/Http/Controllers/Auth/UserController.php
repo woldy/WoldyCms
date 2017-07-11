@@ -5,23 +5,37 @@ use App\Http\Requests;
 use Closure;
 use Woldy\Cms\Http\Controllers\Controller;
 use Tpl;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Response;
+use User;
 class UserController extends Controller
 {
     public function index(){
-    	//Menu::show();
-    	return Tpl::view('index.index','admin');
-    	//return view("woldycms::admin.admin");
+    	return Tpl::view('login.index','user');
     }
 
-    public static function test(){
-    	echo 'test';
+    public static function store(){
+    	$username=Input::get('username');
+    	$password=Input::get('password');
+    	if(User::adminLogin($username,$password)){
+    		$result=[
+    			'errcode'=>0,
+    			'errmsg'=>'',
+    			'url'=>'/'
+    		];
+    	}else{
+    		$result=[
+    			'errcode'=>1,
+    			'errmsg'=>'用户名或密码不正确！',
+    		];
+    	}
+
+    	return response()->json($result);
     }
 
-    public function show(){
 
-    }
-
-    public function login(){
-
+    public function logout(){
+      User::logout();
+      return redirect('/');
     }
 }

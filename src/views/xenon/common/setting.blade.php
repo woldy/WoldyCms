@@ -21,7 +21,7 @@
 						<div class="user-details">
 
 							<h3>
-								<a href="extra-profile.html">{{User::getUser()['name']??'造物神'}}</a>
+								<a href="/user/profile">{{User::getUser()['name']??Setting::get('guest_name')}}</a>
 
 								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
 								<span class="user-status is-online"></span>

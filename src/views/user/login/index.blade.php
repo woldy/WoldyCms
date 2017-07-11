@@ -23,7 +23,7 @@
 					<div class="login-header">
 						<a href="dashboard-1.html" class="logo">
 							<img src="{{$logo2x}}" alt="" width="180" />
-							<span>后台登录</span>
+							<span>用户登录</span>
 						</a>
 
 						<p>你有权保持沉默，但你所提交的每个字符，都将成为呈堂证供！</p>
@@ -41,15 +41,16 @@
 					</div>
 
 					<div class="form-group">
-						<button type="submit" class="btn btn-dark  btn-block text-left">
+						<button type="submit" class="btn btn-dark  btn-block text-left ">
 							<i class="fa-lock"></i>
 							登录
 						</button>
 					</div>
 
 					<div class="login-footer">
-						<a href="javascript:alert('忘你xx！这后台就我一个人能进！')">忘记密码?</a>
-
+						<a href="/auth/user/reg">用户注册</a>
+            &nbsp;|&nbsp;
+            <a href="javascript:alert('忘了就忘了吧，反正里面也没钱。')">找回密码</a>
 <!-- 						<div class="info-links">
 							<a href="#">联系我们</a>
 						</div> -->

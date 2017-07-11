@@ -10,7 +10,6 @@
 		<div class="main-content">
 			@include('woldycms::xenon.common.utop')	
 			@include('woldycms::xenon.common.nav')
-			@include($template)	
 			@include('woldycms::xenon.common.footer')	
 		</div>
 		@include('woldycms::xenon.common.chat')	
