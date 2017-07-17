@@ -30,6 +30,7 @@ class wCmsServiceProvider extends ServiceProvider
         // $this->app->register(\Woldy\Cms\Providers\UserServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\FormServiceProvider::class);
 	      $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        $this->app->register(\Mews\Captcha\CaptchaServiceProvider::class);
 
        $this->app->booting(function(){
             $loader=\Illuminate\Foundation\AliasLoader::getInstance();
@@ -39,6 +40,7 @@ class wCmsServiceProvider extends ServiceProvider
             $loader->alias('User','\Woldy\Cms\Components\User\User');
             $loader->alias('Form','\Woldy\Cms\Components\Form\Form');
             $loader->alias('Debugbar','\Barryvdh\Debugbar\Facade');
+            $loader->alias('Captcha','\Mews\Captcha\Facades\Captcha');
        });
     }
 }

@@ -15,8 +15,14 @@ class RegController extends Controller
     }
 
     public static function store(){
-    	$username=Input::get('username');
+    	$email=Input::get('email');
     	$password=Input::get('password');
+      $mobile=Input::get('mobile');
+      $nick_name=Input::get('nick_name');
+
+
+      
+
     	if(User::adminLogin($username,$password)){
     		$result=[
     			'errcode'=>0,
