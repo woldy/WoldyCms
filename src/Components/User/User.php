@@ -8,13 +8,69 @@ class User{
         return Session::get('user');
     }
 
+
+    public static function checkHas($email,$phone,$nickname){
+      $userinfo=UserModel::where('email',$email)->first();
+      if(!empty($userinfo)){
+        return[
+                'errcode'=>1,
+                'errmsg'=>'有人用你的邮箱注册过了，真的不是你吗？',
+        ];
+      }
+      $userinfo=UserModel::where('phone',$phone)->first();
+      if(!empty($userinfo)){
+        return[
+                'errcode'=>2,
+                'errmsg'=>'有人用你的电话注册过了，真的不是你吗？',
+        ];
+      }
+      $userinfo=UserModel::where('phone',$phone)->first();
+      if(!empty($userinfo)){
+        return[
+                'errcode'=>3,
+                'errmsg'=>'刚好有个人起了和你一样的名字，介意换一下吗？',
+        ];
+      }
+      return false;
+    }
+
+
+
+    public static function checkWrong($email,$phone,$nickname){
+      $pattern = "/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,6}){1,2})$/";
+      if (!preg_match( $pattern, $email)){
+        return[
+                'errcode'=>4,
+                'errmsg'=>'我抄的这个正则说你填的邮箱不正确。。',
+        ];
+      }
+
+
+      if(!preg_match("/^1[34578]{1}\d{9}$/",$phone)){
+        return[
+                'errcode'=>5,
+                'errmsg'=>'我抄的这个正则说你填的电话号码不正确。。'.$phone,
+        ];
+      }
+    }
+
+    public static function create($email,$phone,$nickname,$password){
+      UserModel::create([
+        'email'=>$email,
+        'phone'=>$phone,
+        'nickname'=>$nickname,
+        'password'=>Hash::make($password)
+      ]);
+    }
+
+
     public static function adminLogin($username,$password){
         if(is_numeric($username) && strlen($username)==11){
-            $userinfo=UserModel::where('phone',$username)->find(1);
+            $userinfo=UserModel::where('phone',$username)->first();
         }else if(strpos($username, '@')>0){
-            $userinfo=UserModel::where('email',$username)->find(1);
+            $userinfo=UserModel::where('email',$username)->first();
         }else{
-            $userinfo=UserModel::where('username',$username)->find(1);
+            $userinfo=UserModel::where('username',$username)->first();
         }
 
         if($userinfo==null || !Hash::check($password,$userinfo->password) || $userinfo['is_admin']==0){
@@ -32,11 +88,11 @@ class User{
 
     public static function userLogin($username,$password){
         if(is_numeric($username) && strlen($username)==11){
-            $userinfo=UserModel::where('phone',$username)->find(1);
+            $userinfo=UserModel::where('phone',$username)->first();
         }else if(strpos($username, '@')>0){
-            $userinfo=UserModel::where('email',$username)->find(1);
+            $userinfo=UserModel::where('email',$username)->first();
         }else{
-            $userinfo=UserModel::where('username',$username)->find(1);
+            $userinfo=UserModel::where('username',$username)->first();
         }
 
         if($userinfo==null || !Hash::check($password,$userinfo->password)){

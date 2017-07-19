@@ -23,8 +23,8 @@ Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\Ad
 	Route::get('/model/edit/{table}', 'Admin\ModelController@getEdit');
 	Route::post('/model/edit/{table}', 'Admin\ModelController@postEdit');
 	Route::get('/model/list', 'Admin\ModelController@getList');
-	Route::get('/model/config/list/{table}', 'Admin\ConfigController@getList');
-	Route::get('/model/config/form/{table}', 'Admin\ConfigController@getForm');
+	Route::get('/model/config/list/{table}', 'Admin\SettingController@getList');
+	Route::get('/model/config/form/{table}', 'Admin\SettingController@getForm');
 
 
 	Route::get('/model/show/{table}', 'Admin\ModelController@getShow');
@@ -45,7 +45,7 @@ Route::group(['prefix' => 'user','middleware' => '\Woldy\Cms\Http\Middleware\Use
 
 
 	Route::resource('profile', 'User\ProfileController');//TODO
-	Route::resource('reg', 'User\RegController');//TODO
+	Route::resource('reg', 'Auth\RegController');//TODO
 	Route::resource('reset', 'User\LoginController');//TODO
 });
 

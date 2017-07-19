@@ -7,7 +7,6 @@ use Request;
 class UserModel extends Model
 {
     protected $table = 'wcms_user';
+    protected $guarded=[];
     public $timestamps = false;
 }
-
- 

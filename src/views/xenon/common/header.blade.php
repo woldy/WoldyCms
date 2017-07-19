@@ -23,6 +23,6 @@
     <![endif]-->
 
      <link rel="stylesheet" href="{{$static_url}}{{$static['css']}}?ver={{$version}}">
-     <script src="{{$static_base}}{{$static['js']}}?ver={{$version}}"></script>
+     <script src="{{$static_url}}{{$static['js']}}?ver={{$version}}"></script>
 </head>
 <body class="page-body">

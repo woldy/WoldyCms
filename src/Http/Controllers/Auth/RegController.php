@@ -17,24 +17,44 @@ class RegController extends Controller
     public static function store(){
     	$email=Input::get('email');
     	$password=Input::get('password');
-      $mobile=Input::get('mobile');
-      $nick_name=Input::get('nick_name');
+      $phone=Input::get('phone');
+      $nickname=Input::get('nickname');
 
 
-      
 
-    	if(User::adminLogin($username,$password)){
-    		$result=[
+      $checkhas=User::checkHas($email,$phone,$nickname);
+      if($checkhas){
+        return response()->json($checkhas);
+      }
+
+      $checkwrong=User::checkWrong($email,$phone,$nickname);
+      if($checkwrong){
+        return response()->json($checkwrong);
+      }
+
+      User::create($email,$phone,$nickname,$password);
+      User::userLogin($email,$password);
+
+
+      	$result=[
     			'errcode'=>0,
-    			'errmsg'=>'',
+    			'errmsg'=>'ok',
     			'url'=>'/'
     		];
-    	}else{
-    		$result=[
-    			'errcode'=>1,
-    			'errmsg'=>'用户名或密码不正确！',
-    		];
-    	}
+
+      //
+    	// if(User::adminLogin($username,$password)){
+    	// 	$result=[
+    	// 		'errcode'=>0,
+    	// 		'errmsg'=>'',
+    	// 		'url'=>'/'
+    	// 	];
+    	// }else{
+    	// 	$result=[
+    	// 		'errcode'=>1,
+    	// 		'errmsg'=>'用户名或密码不正确！',
+    	// 	];
+    	// }
 
     	return response()->json($result);
     }

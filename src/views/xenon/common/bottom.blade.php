@@ -1,7 +1,7 @@
     <div class="page-loading-overlay">
         <div class="loader-2"></div>
     </div>
- 
+
 
  	<div class="modal fade" id="modal">
 		<div class="modal-dialog">
@@ -11,11 +11,11 @@
 					<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
 					<h4 class="modal-title">提示</h4>
 				</div>
-				
+
 				<div class="modal-body">
 					Hello I am a Modal!
 				</div>
-				
+
 				<div class="modal-footer">
 					<button type="button" class="btn btn-white modal-ok" data-dismiss="modal">确定</button>
 <!-- 					<button type="button" class="btn btn-info">Save changes</button> -->
@@ -31,6 +31,6 @@
     @endforeach
 
 
-     <script src="{{$static_base}}{{$static['js']}}?ver={{$version}}"></script>
+     <script src="{{$static_url}}{{$static['js']}}?ver={{$version}}"></script>
 </body>
 </html>
