@@ -24,7 +24,7 @@ class ModelController extends Controller
      * @return   [type]                   [description]
      */
     public function getList(){
-        
+
 
         /**
          * 获取所有tables
@@ -51,15 +51,15 @@ class ModelController extends Controller
         		$list[$model['table']]=$model;
         	}
         }
-      
-      	
- 
+
+
+
     	return Tpl::view('model.list','admin',['list'=>$list]);
     }
 
 
     public function postEdit($table){
- 
+
         $table=addslashes($table);
         $I=Input::all();
         $I['act']=$I['act']=='add'?'add':'modify';
@@ -68,8 +68,8 @@ class ModelController extends Controller
         $I['filedlen']=intval($I['filedlen']);
         $I['filedplen']=intval($I['filedplen']);
         $I['filedcomment']=addslashes($I['filedcomment']);
- 
- 
+
+
     if(Schema::hasColumn($table, $I['filedname'])){
         $I['act']='modify';
     }
@@ -92,14 +92,14 @@ class ModelController extends Controller
     }
 
 
- 
-    
+
+
         return $this->getEdit($table);
     }
 
     public function getEdit($table){
     	//$columns=DB::select("show full columns from $table");
-        $table=addslashes($table); 
+        $table=addslashes($table);
         $db=(DB::connection()->getDatabaseName());
         $columns=DB::select("select * from information_schema.columns where table_schema = '{$db}' and table_name = '{$table}';");
         $config=[
@@ -115,7 +115,7 @@ class ModelController extends Controller
 
             [
                 'type'=>'text',
-                
+
                 'attr'=>[
                     'name'=>'filedname',
                     'id'=>'filedname',
@@ -135,24 +135,24 @@ class ModelController extends Controller
                 'attr'=>[
                     'name'=>'filedtype',
                     'id'=>'filedtype',
- 
+
                 ],
             ],
 
             [
                 'type'=>'text',
-                
+
                 'attr'=>[
                     'name'=>'filedlen',
                     'id'=>'filedlen',
                     'placeholder'=>'字段长度',
                     'style'=>'width:100px;',
-                    'value'=>100,   
+                    'value'=>100,
                 ],
             ],
             [
                 'type'=>'text',
-                
+
                 'attr'=>[
                     'name'=>'filedplen',
                     'id'=>'filedplen',
@@ -162,14 +162,14 @@ class ModelController extends Controller
             ],
             [
                 'type'=>'text',
-                
+
                 'attr'=>[
                     'name'=>'filedcomment',
                     'id'=>'filedcomment',
                     'placeholder'=>'字段说明'
- 
+
                 ],
-            ],            
+            ],
 
             [
                 'type'=>'hidden',
@@ -220,7 +220,7 @@ class ModelController extends Controller
         $table=addslashes($table);
 
         $columns=DB::select("show full columns from $table");
-        
+
         $table=new BasicModel($table);
         $data=$table->get()->toarray();
 
@@ -245,9 +245,9 @@ class ModelController extends Controller
                 Schema::create($name, function (Blueprint $table) {
                     $table->increments('id');
                     $table->timestamps();
-                }); 
+                });
 
-                 
+
                 DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `id` int COMMENT '行ID'");
                 DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `created_at`  timestamp COMMENT '创建时间'");
                 DB::statement("ALTER TABLE `{$name}` MODIFY COLUMN `updated_at` timestamp COMMENT '更新时间'");
@@ -259,11 +259,11 @@ class ModelController extends Controller
                     ]
                 );
             }
-        } 
+        }
         //return redirect('/admin/model/list');
     }
 
- 
+
 
 
     /**
@@ -276,7 +276,7 @@ class ModelController extends Controller
         $name=Input::get('table');
         $name=addslashes($name);
             if(Schema::hasTable($name)){
-                Schema::drop($name); 
+                Schema::drop($name);
                 DB::table('wcms_models')->where('table','=',$name)->delete();
             }
         //return redirect('/admin/model/list');

@@ -45,8 +45,8 @@
 									<tbody>
 									@foreach ($list as $item)
 										<tr>
-											<th>{{$item['Field']}}</th>
-											<td>{{$item['Comment']}}</td>
+											<th>{{$item['COLUMN_NAME']}}</th>
+											<td>{{$item['COLUMN_COMMENT']}}</td>
 											<td>
 											<input type="checkbox" name="display" id="display" checked="" class="iswitch iswitch-info"></td>
 											<td><select class="form-control"><option>test</option></select></td>

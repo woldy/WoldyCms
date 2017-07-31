@@ -16,7 +16,7 @@ use DB;
 
 class SettingController extends Controller
 {
-  public function index($type){
-    return Tpl::view('setting.index','admin');
+  public function getList($type){
+    return Tpl::view('model.list','admin');
   }
 }

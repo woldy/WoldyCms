@@ -20,9 +20,9 @@ class mItemController extends Controller
     public function getList($table){
 
         $columns=DB::select("show full columns from $table");
-
-
         
+
+
         $mTable=new BasicModel($table);
         $list=$mTable->get()->toarray();
 
