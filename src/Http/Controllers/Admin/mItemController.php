@@ -20,7 +20,6 @@ class mItemController extends Controller
     public function getList($table){
 
         $columns=DB::select("show full columns from $table");
-        
 
 
         $mTable=new BasicModel($table);
@@ -29,11 +28,16 @@ class mItemController extends Controller
         return Tpl::view('mitem.list','admin',[
                 'columns'=>$columns,
                 'list'=>$list,
-                'table'=>$table
+                'table'=>$table,
+
             ]);
         //var_dump($data);
     }
 
+
+    public function store(){
+
+    }
 
 
 }

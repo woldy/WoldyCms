@@ -21,6 +21,13 @@ class ConfigController extends Controller
     $db=(DB::connection()->getDatabaseName());
     $columns=DB::select("select * from information_schema.columns where table_schema = '{$db}' and table_name = '{$table}';");
 
-    return Tpl::view('model.cfglist','admin',['list'=>$columns]);
+
+    $model_list_html=BasicModel::getListHtml();
+
+
+    return Tpl::view('model.cfglist','admin',[
+      'list'=>$columns,
+      'model_list_html'=>$model_list_html
+    ]);
   }
 }

@@ -49,7 +49,7 @@
 											<td>{{$item['COLUMN_COMMENT']}}</td>
 											<td>
 											<input type="checkbox" name="display" id="display" checked="" class="iswitch iswitch-info"></td>
-											<td><select class="form-control"><option>test</option></select></td>
+											<td><select class="form-control"><option value="">无</option>{!!$model_list_html!!}</select></td>
 											<td><select class="form-control"><option>test</option></select></td>
 											<td><select class="form-control"><option>test</option></select></td>
 											<td>

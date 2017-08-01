@@ -23,37 +23,9 @@ class ModelController extends Controller
      * @DateTime 2016-07-24T16:38:45+0800
      * @return   [type]                   [description]
      */
-    public function getList(){
-
-
-        /**
-         * 获取所有tables
-         * @var [type]
-         */
-        $tables=DB::select("show tables");
-        $tables=array_flatten($tables);
-        $list=[]; //列表
-        foreach ($tables as $table) {
-        	$list[$table]=[
-        		'id'=>'-',
-        		'table'=>$table,
-        		'alias'=>'-'
-        	];
-        }
-
-        /**
-         * 对比models和tables，如果模型是mysql表，则显示表细节
-         * @var [type]
-         */
-        $models=BasicModel::all()->toArray();
-        foreach ($models as $model) {
-        	if(in_array($model['table'],$tables)){
-        		$list[$model['table']]=$model;
-        	}
-        }
-
-
-
+    public  function getList(){
+      
+      $list=BasicModel::getList();
     	return Tpl::view('model.list','admin',['list'=>$list]);
     }
 
