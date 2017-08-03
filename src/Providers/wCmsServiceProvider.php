@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Tpl;
 class wCmsServiceProvider extends ServiceProvider
 {
+
+
     /**
      * Bootstrap the application services.
      *
@@ -25,6 +27,7 @@ class wCmsServiceProvider extends ServiceProvider
     {
         $this->app->register(\Woldy\Cms\Http\RouteServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\TplServiceProvider::class);
+        $this->app->register(\Woldy\Cms\Providers\EventServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\SettingServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\MenuServiceProvider::class);
         // $this->app->register(\Woldy\Cms\Providers\UserServiceProvider::class);

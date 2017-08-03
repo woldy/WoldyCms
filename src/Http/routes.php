@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\Ad
 	Route::post('/model/deltable', 'Admin\ModelController@postDeltable');
 
 	Route::get('/category/list', 'Admin\CategoryController@getList');
+
+	Route::get('/cache/list','Admin\CacheController@getList');
 });
 
 
