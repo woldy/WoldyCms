@@ -19,6 +19,14 @@ Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\Ad
 	Route::get('/menu/item', 'Admin\MenuController@getItem');
 	Route::post('/menu/item', 'Admin\MenuController@postItem');
 
+	Route::get('/category/list/{type}', 'Admin\CategoryController@getList');
+	Route::post('/category/sort', 'Admin\CategoryController@postSort');
+	Route::get('/category/del', 'Admin\CategoryController@getDel');
+	Route::get('/category/edit', 'Admin\CategoryController@getEdit');
+	Route::get('/category/item', 'Admin\CategoryController@getItem');
+	Route::post('/category/item', 'Admin\CategoryController@postItem');
+
+
 
 	Route::get('/model/edit/{table}', 'Admin\ModelController@getEdit');
 	Route::post('/model/edit/{table}', 'Admin\ModelController@postEdit');

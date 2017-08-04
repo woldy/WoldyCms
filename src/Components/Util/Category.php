@@ -2,20 +2,12 @@
 namespace Woldy\Cms\Components\Util;
 use DB;
 use Request;
-use Woldy\Cms\Models\MenuModel;
-class Menu{
+use Woldy\Cms\Models\CategoryModel;
+class Category{
 
-	public static $menu_table='wcms_menu';
+		public static $menu_table='wcms_category';
     public static $current='/';
     public static $path=array('0');
-
-    private $menu_type=[
-        '0'=>'admin',
-        '1'=>'portal',
-        '2'=>'index',
-        '3'=>'wiki'
-
-    ];
 
     public static function get_nav(){
             $nav='';
@@ -42,13 +34,10 @@ class Menu{
     }
 
 
-    public static function get_tree($type=0,$display='on'){    //获取全部菜单
+    public static function get_tree($pid=0){    //获取全部菜单
         $tree_list=DB::table(self::$menu_table);
-        if($display=='on'){
-             $tree_list= $tree_list->where('display','on')->where('enable','on');
-        }
         $tree_list=$tree_list
-            ->where('type','=',$type)
+            ->where('path','like',"{$pid}-%")
             ->orderBy('idx', 'asc')
             ->get();
 
