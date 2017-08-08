@@ -3,6 +3,7 @@ namespace Woldy\Cms\Components\User;
 use Woldy\Cms\Models\UserModel;
 use Hash;
 use Session;
+use Setting;
 class User{
     public static function getUser(){
         return Session::get('user');
@@ -94,7 +95,7 @@ class User{
         }
     }
 
-    public static function userLogin($username,$password){
+    public static function userLogin($username,$password='',$third=[]){
         if(is_numeric($username) && strlen($username)==11){
             $userinfo=UserModel::where('phone',$username)->first();
         }else if(strpos($username, '@')>0){
@@ -103,17 +104,23 @@ class User{
             $userinfo=UserModel::where('username',$username)->first();
         }
 
-        if($userinfo==null || !Hash::check($password,$userinfo->password)){
+
+
+
+        if($userinfo!=null){
+          $userinfo=$userinfo->toarray();
+        }
+
+        if($userinfo==null){
+          $userinfo=[];
+        }
+        if((empty($userinfo) || !Hash::check($password,$userinfo['password']??'')) && empty($third)){
             return false;
         }else{
-           $userinfo=$userinfo->toarray();
-           // $admin=[
-           //  'user'=>$userinfo,
-           // ];
+          $userinfo=array_merge($userinfo,$third);
            if($userinfo['is_admin']==1){
              Session::put('admin',$userinfo);
            }
-
            Session::put('user',$userinfo);
            return true;
         }
