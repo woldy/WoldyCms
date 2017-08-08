@@ -8,6 +8,14 @@ class User{
         return Session::get('user');
     }
 
+    public static function isAdmin(){
+        $user=self::getUser();
+        if(!isset($user['is_admin']) || $user['is_admin']!=1){
+          return false;
+        }else{
+          return true;
+        }
+    }
 
     public static function checkHas($email,$phone,$nickname){
       $userinfo=UserModel::where('email',$email)->first();
