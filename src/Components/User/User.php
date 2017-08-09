@@ -118,6 +118,7 @@ class User{
             return false;
         }else{
           $userinfo=array_merge($userinfo,$third);
+
            if(isset($userinfo['is_admin']) && $userinfo['is_admin']==1){
              Session::put('admin',$userinfo);
            }
