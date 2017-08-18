@@ -28,7 +28,7 @@ class WikiAuth
             return $next($request);
         }else{
             $login_url=Setting::get('login_url');
-            return redirect($login_url);
+            return redirect("{$login_url}?redirect_to={$request->path}");
         }
     }
 }
