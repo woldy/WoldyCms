@@ -144,7 +144,7 @@
 								</a>
 							</li>
 							<li class="last">
-								<a href="/auth/logout">
+								<a href="{{Setting::get('logout_url')}}">
 									<i class="fa-lock"></i>
 									退出登陆
 								</a>
