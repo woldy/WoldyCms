@@ -32,5 +32,10 @@
 
 
      <script src="{{$static_url}}{{$static['js']}}?ver={{$version}}"></script>
+
+     @if(Session::has('msg'))
+     <script>malert("{{ Session::get('msg') }}")</script>
+     @endif
+
 </body>
 </html>

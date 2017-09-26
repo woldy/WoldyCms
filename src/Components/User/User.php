@@ -3,11 +3,20 @@ namespace Woldy\Cms\Components\User;
 use Woldy\Cms\Models\UserModel;
 use Hash;
 use Session;
+use Setting;
 class User{
     public static function getUser(){
         return Session::get('user');
     }
 
+    public static function isAdmin(){
+        $user=self::getUser();
+        if(!isset($user['is_admin']) || $user['is_admin']!=1){
+          return false;
+        }else{
+          return true;
+        }
+    }
 
     public static function checkHas($email,$phone,$nickname){
       $userinfo=UserModel::where('email',$email)->first();
@@ -86,7 +95,7 @@ class User{
         }
     }
 
-    public static function userLogin($username,$password){
+    public static function userLogin($username,$password='',$third=[]){
         if(is_numeric($username) && strlen($username)==11){
             $userinfo=UserModel::where('phone',$username)->first();
         }else if(strpos($username, '@')>0){
@@ -95,17 +104,24 @@ class User{
             $userinfo=UserModel::where('username',$username)->first();
         }
 
-        if($userinfo==null || !Hash::check($password,$userinfo->password)){
+
+
+
+        if($userinfo!=null){
+          $userinfo=$userinfo->toarray();
+        }
+
+        if($userinfo==null){
+          $userinfo=[];
+        }
+        if((empty($userinfo) || !Hash::check($password,$userinfo['password']??'')) && empty($third)){
             return false;
         }else{
-           $userinfo=$userinfo->toarray();
-           // $admin=[
-           //  'user'=>$userinfo,
-           // ];
-           if($userinfo['is_admin']==1){
+          $userinfo=array_merge($userinfo,$third);
+
+           if(isset($userinfo['is_admin']) && $userinfo['is_admin']==1){
              Session::put('admin',$userinfo);
            }
-
            Session::put('user',$userinfo);
            return true;
         }

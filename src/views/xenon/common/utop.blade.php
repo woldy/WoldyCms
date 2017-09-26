@@ -10,7 +10,7 @@
 						</a>
 					</li>
 
-@if(User::getUser())
+@if(User::getUser() && false)
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-envelope-o"></i>
@@ -129,7 +129,7 @@
 									个人资料
 								</a>
 							</li>
-							@if(User::getUser()['is_admin']==1)
+							@if(User::isAdmin())
 							<li>
 								<a href="/admin/index">
 									<i class="fa-cog"></i>
