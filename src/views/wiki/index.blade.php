@@ -21,9 +21,9 @@
 }
 </style>
 <div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 toc-parent">
 
-				<div id="toc" class="tocify" style="width: 183px;"></div>
+				      <div id="toc" class="tocify" style="width: 183px;"></div>
 
 				</div>
 
@@ -80,7 +80,7 @@ $(document).ready(function(){
 	//$(".markdown-body").show();
 
 	if($(".tocify-content").html().length<1000){
-		$("#toc").hide();
+		$(".toc-parent").hide();
 		$(".markdown-body").removeClass('col-md-9');
 	}
 
