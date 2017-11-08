@@ -8,10 +8,6 @@ Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\Ad
 
 	Route::get('/setting/{type}', 'Admin\SettingController@index');
 
-
-
-
-
 	Route::get('/menu/list/{type}', 'Admin\MenuController@getList');
 	Route::post('/menu/sort', 'Admin\MenuController@postSort');
 	Route::get('/menu/del', 'Admin\MenuController@getDel');
@@ -49,7 +45,6 @@ Route::group(['prefix' => 'admin','middleware' => '\Woldy\Cms\Http\Middleware\Ad
 
 
 
-
 //TODO
 Route::group(['prefix' => 'user','middleware' => '\Woldy\Cms\Http\Middleware\UserAuth::class'], function() {
 	Route::get('/', 'User\ProfileController@index');
@@ -61,9 +56,6 @@ Route::group(['prefix' => 'user','middleware' => '\Woldy\Cms\Http\Middleware\Use
 	Route::resource('reg', 'Auth\RegController');//TODO
 	Route::resource('reset', 'User\LoginController');//TODO
 });
-
-
-
 
 
 
@@ -80,3 +72,5 @@ Route::group(['middleware' => ['\Woldy\Cms\Http\Middleware\WikiAuth::class']], f
 	Route::get('/wiki/edit/{name}', 'Wiki\EditController@show');
 	Route::post('/wiki/edit/{name}', 'Wiki\EditController@store');
 });
+
+Route::post('/plugin/upload/pic', 'Plugin\UploadController@mdpic');

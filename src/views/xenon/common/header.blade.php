@@ -8,7 +8,6 @@
     <meta name="keywords" content="" />
     <meta name="description" content="{{Tpl::getinfo()['seotext']??''}}" />
     <meta name="author" content="woldy" />
-
     <title> {{Setting::get('site_title')}}{{Tpl::getinfo()['seotitle']??''}}</title>
 
     @foreach ($common_css as $css)
@@ -24,5 +23,13 @@
 
      <link rel="stylesheet" href="{{$static_url}}{{$static['css']}}?ver={{$version}}">
      <script src="{{$static_url}}{{$static['js']}}?ver={{$version}}"></script>
+
+     <script>
+       $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+     </script>
 </head>
 <body class="page-body">

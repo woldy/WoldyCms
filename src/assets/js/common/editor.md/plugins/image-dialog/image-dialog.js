@@ -51,13 +51,14 @@
                                         "<label>" + imageLang.url + "</label>" +
                                         "<input type=\"text\" data-url />" + (function(){
                                             return (settings.imageUpload) ? "<div class=\"" + classPrefix + "file-input\">" +
-                                                                                "<input type=\"file\" name=\"" + classPrefix + "image-file\" accept=\"image/*\" />" +
+                                                                                "<input type=\"file\" name=\"" + classPrefix + "image-file\" accept=\"image/jeg,image/png,image/jpeg,image/gif,image/bmp\" />" +
                                                                                 "<input type=\"submit\" value=\"" + imageLang.uploadButton + "\" />" +
                                                                             "</div>" : "";
                                         })() +
                                         "<br/>" +
                                         "<label>" + imageLang.alt + "</label>" +
                                         "<input type=\"text\" value=\"" + selection + "\" data-alt />" +
+                                        "<input type=\"hidden\" value=\"" + token + "\" name='_token' />" +
                                         "<br/>" +
                                         "<label>" + imageLang.link + "</label>" +
                                         "<input type=\"text\" value=\"http://\" data-link />" +
