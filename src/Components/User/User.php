@@ -4,7 +4,7 @@ use Woldy\Cms\Models\UserModel;
 use Hash;
 use Session;
 use Setting;
-use Log;
+//use Log;
 class User{
     public static function getUser(){
         return Session::get('user');
