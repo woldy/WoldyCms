@@ -4,6 +4,7 @@ use Woldy\Cms\Models\UserModel;
 use Hash;
 use Session;
 use Setting;
+use Log;
 class User{
     public static function getUser(){
         return Session::get('user');
@@ -118,7 +119,6 @@ class User{
             return false;
         }else{
           $userinfo=array_merge($userinfo,$third);
-
            if(isset($userinfo['is_admin']) && $userinfo['is_admin']==1){
              Session::put('admin',$userinfo);
            }
