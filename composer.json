@@ -10,7 +10,7 @@
             "email": "king@woldy.net"
         }
     ],
-   "minimum-stability": "v0.0.3",
+   "minimum-stability": "dev",
    "require":{
 
     },
