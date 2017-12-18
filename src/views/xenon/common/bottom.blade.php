@@ -37,5 +37,6 @@
      <script>malert("{{ Session::get('msg') }}")</script>
      @endif
 
+
 </body>
 </html>

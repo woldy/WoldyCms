@@ -14,7 +14,7 @@ class EditController extends Controller
 		if(User::isAdmin()){
 			WikiModel::create([
 				'name'=>Input::get('name'),
-				'content'=>htmlentities(Input::get('content'), ENT_COMPAT, 'utf-8'),
+				'content'=>htmlentities(Input::get('mdeditor-markdown-doc'), ENT_COMPAT, 'utf-8'),
 				'author_id'=>session('admin')['id'],
 				'author_name'=>session('admin')['nickname'],
 				'tags'=>''
