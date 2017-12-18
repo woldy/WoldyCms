@@ -27,7 +27,7 @@ class wCmsServiceProvider extends ServiceProvider
     {
         $this->app->register(\Woldy\Cms\Http\RouteServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\TplServiceProvider::class);
-        //$this->app->register(\Woldy\Cms\Providers\EventServiceProvider::class);//缓存没法管，先不加了
+        $this->app->register(\Woldy\Cms\Providers\EventServiceProvider::class);//缓存没法管，先不加了
 	      $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
         $this->app->register(\Mews\Captcha\CaptchaServiceProvider::class);
 

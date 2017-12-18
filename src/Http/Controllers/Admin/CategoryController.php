@@ -38,6 +38,16 @@ class CategoryController extends Controller
           'p_class'=>'',
     		],
 
+        [
+    			'type'=>'hidden',
+          'label'=>'pid',
+    			'attr'=>[
+           			'name'=>'pid',
+           			'id'=>'pid',
+           			'value'=>$pid,
+    			],
+          'p_class'=>'',
+    		],
 
     		[
     			'type'=>'text',
@@ -50,11 +60,6 @@ class CategoryController extends Controller
     			],
           'p_class'=>'',
     		],
-
-
-
-
-
 
     		[
     			'type'=>'submit',
@@ -83,6 +88,8 @@ class CategoryController extends Controller
     	//$form->show();
     	//Menu::show();
     	return Tpl::view('category.list','admin',[
+            'c_id'=>$pid,
+            'category'=>Category::get($pid),
             'listform'=>$listform,
             'menu_html'=>Category::edit_list(intval($pid))
         ]);
@@ -90,39 +97,42 @@ class CategoryController extends Controller
 
 
     public function postSort(){
+
+      $c_id=Input::get('c_id');
+      $category=Category::get($c_id);
+      $c_path=$category['path'].'-'.$c_id;
     	$pids=[];
-		$sortstr=Input::get('sortstr');
-		$items=explode("\n", $sortstr);
-		$idx=0;
-		foreach ($items as $item) {
-			$path='0';
-			$idx++;
-			if(empty($item)){
-				return;
-			}
-			$item=explode('|', $item);
-			$id=$item[0];
-			$level=$item[1];
-			$pids[$level]=$id;
-			if($level==0){
-				$pid=0;
-			}else{
-				$pid=$pids[$level-1];
-			}
+  		$sortstr=Input::get('sortstr');
+  		$items=explode("\n", $sortstr);
+  		$idx=0;
+  		foreach ($items as $item) {
+  			$path=$c_path;
+  			$idx++;
+  			if(empty($item)){
+  				return;
+  			}
+  			$item=explode('|', $item);
+  			$id=$item[0];
+  			$level=$item[1];
+  			$pids[$level]=$id;
+  			if($level==0){
+  				$pid=$c_id;
+  			}else{
+  				$pid=$pids[$level-1];
+  			}
 
-			for($i=0;$i<=$level;$i++){
-				$path.='-'.$pids[$i];
-			}
+  			for($i=0;$i<=$level;$i++){
+  				$path.='-'.$pids[$i];
+  			}
 
-			CategoryModel::where('id', $id)
-			->update([
-				'pid' => $pid,
-				'idx'=>$idx,
-				'path'=>$path
-
-			]);
-		}
-		echo "ok";
+  			CategoryModel::where('id', $id)
+  			->update([
+  				'pid' => $pid,
+  				'idx'=>$idx,
+  				'path'=>$path
+  			]);
+  		}
+		    echo "ok";
     }
 
     public function getItem(){

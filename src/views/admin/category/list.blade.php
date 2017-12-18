@@ -1,9 +1,10 @@
 @extends($tpl_layout)
 @section('content')
+	<script>var c_id={{$c_id}};</script>
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="panel panel-default">
-				<div class="panel-heading">分类管理 </div>
+				<div class="panel-heading">分类管理 -【{{$category['title']}}】</div>
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-sm-12">

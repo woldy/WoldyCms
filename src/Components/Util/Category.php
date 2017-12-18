@@ -9,21 +9,13 @@ class Category{
     public static $current='/';
     public static $path=array('0');
 
-    public static function get_nav(){
-            $nav='';
-            $urlpath='/'.urldecode(Request::path()); //高亮当前菜单
-            $treepath=MenuModel::where('url',$urlpath)->first();
-            if(empty($treepath)){
+		public static function get($id){
+				if($id==0) $id=1;
+				$c=CategoryModel::where('id',$id)->first()->toArray();
+				return $c;
+		}
 
-            }else{
-                $nav_list=MenuModel::whereIn('id',explode('-', $treepath->path))->get()->toArray();
-                foreach ($nav_list as $item) {
-                    $nav.="<li><a href=\"{$item['url']}\">{$item['title']}</a></li>";
-                }
-            }
-            return $nav;
 
-    }
 
 	public static function show_list($type=0){
 		return self::get_menu_show_list($type);
@@ -37,17 +29,24 @@ class Category{
     public static function get_tree($pid=0){    //获取全部菜单
         $tree_list=DB::table(self::$menu_table);
         $tree_list=$tree_list
-            ->where('path','like',"{$pid}-%")
+            ->where('path','like',"%-{$pid}-%")
+						->orwhere('path','like',"{$pid}-%")
+						->orwhere('pid','=',$pid)
+						->orwhere('path','=',$pid)
             ->orderBy('idx', 'asc')
             ->get();
+
 
         $items=array();
         foreach($tree_list as $tree){
         	$items[$tree['id']]=$tree;
         }
-        foreach($items as $item)
-            $items[$item['pid']]['sub'][$item['id']] = &$items[$item['id']];
-        $tree=isset($items[0]['sub']) ? $items[0]['sub'] : array();
+
+
+        foreach($items as $item){
+					$items[$item['pid']]['sub'][$item['id']] = &$items[$item['id']];
+				}
+				$tree=isset($items[$pid]['sub']) ? $items[$pid]['sub'] : array();
 
         return $tree;
 
@@ -61,6 +60,9 @@ class Category{
             $tree=self::get_tree($type,'all');
             $first=true;
         }
+
+
+
         if(is_array($tree) && count($tree)>0){
             if(isset($tree['title'])){
                 //存在子菜单
@@ -69,7 +71,7 @@ class Category{
                                     <div class=\"uk-nestable-item\">
                                         <div class=\"uk-nestable-handle\"></div>
                                         <div data-nestable-action=\"toggle\"></div>
-                                        <div class=\"list-label\">{$tree['title']}</div>
+                                        <div class=\"list-label\">{$tree['title']}&nbsp;&nbsp;&nbsp;（id:{$tree['id']}）</div>
                                         <a class=\"fa-trash pull-right\" style=\"padding: 10px;display:block\" href=\"javascript:///\">&nbsp;</a>
                                     </div>\n";
                     $tree_html.=self::get_menu_edit_list($type,$tree['sub']);
@@ -79,7 +81,7 @@ class Category{
                                     <div class=\"uk-nestable-item\">
                                         <div class=\"uk-nestable-handle\"></div>
                                         <div data-nestable-action=\"toggle\"></div>
-                                        <div class=\"list-label\">{$tree['title']}</div>
+                                        <div class=\"list-label\">{$tree['title']}&nbsp;&nbsp;&nbsp;（id:{$tree['id']}）</div>
                                         <a class=\"fa-trash pull-right\" style=\"padding: 10px;\" href=\"javascript:///\">&nbsp;</a>
                                     </div></li>\n";
                 }
@@ -93,7 +95,6 @@ class Category{
                 if(!$first) $tree_html.="</ul>\n";
             }
         }
-
         return $tree_html;
     }
 
@@ -115,9 +116,6 @@ class Category{
                 self::$current=$urlpath;
                 self::$path=explode('-', $treepath[0]);
             }
-
-
-
 
             $tree=self::get_tree($type);
             $first=true;

@@ -10,7 +10,7 @@
 	$("#menuadd").on('click', function(){
   			$("#id").val("0");
   			$("#title").val('');
-  			$("#submit").html("增加");  	
+  			$("#submit").html("增加");
 	});
 
 	itemclick();
@@ -61,7 +61,8 @@ function sortMenu(str){
   		type: 'POST',
   		url: '/admin/category/sort',
   		data: {
-  			sortstr:str,
+  			'sortstr':str,
+				'c_id':c_id,
   			'_token':token,
   		},
   		success: function(data){
@@ -79,7 +80,7 @@ function sortMenu(str){
  * @return   {[type]}                 [description]
  */
 function itemclick(){
-	$("body").on("click",".uk-nestable-item", function () { 
+	$("body").on("click",".uk-nestable-item", function () {
 		id=$(this).parent().attr('data-item-id');
 		getitem(id);
 	});
@@ -97,7 +98,7 @@ function getitem(id){
   		success: function(data){
   			$("#id").val(data.id);
   			$("#title").val(data.title);
-   			$("#submit").html("修改");  
+   			$("#submit").html("修改");
 
         if(data.enable=='off'){
           $("#enable").removeAttr('checked');

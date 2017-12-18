@@ -2,6 +2,7 @@
 namespace Woldy\Cms\Components\Util;
 use Illuminate\Config\Repository;
 use Request;
+use Cache;
 use Woldy\Cms\Models\MenuModel;
 class Tpl{
 
@@ -36,7 +37,12 @@ class Tpl{
 
 	public static function getinfo(){
 				$urlpath='/'.urldecode(Request::path());
-        $info=MenuModel::where('url','=',$urlpath)->first();
+				$info=Cache::get('menu_info_'.md5($urlpath));
+				if(empty($info)){
+					$info=MenuModel::where('url','=',$urlpath)->first();
+					Cache::put('menu_info_'.md5($urlpath),$info,10);
+				}
+
         if(!empty($info)){
         	$info=$info->toarray();
         }

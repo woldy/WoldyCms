@@ -18,7 +18,12 @@ use DB;
 class CacheController extends Controller
 {
   public function getList(){
-      $cache_list=Cache::get('cache_list');
+    $cache_list=Cache::get('cache_list');
+    if(empty($cache_list)){
+      $cache_list=[];
+    }
+
+ 
 
 	  return Tpl::view('cache.list','admin',[
 	      'list'=>$cache_list
