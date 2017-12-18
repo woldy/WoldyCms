@@ -24,6 +24,6 @@ function GetQueryString(name)
      if(r!=null)return  unescape(r[2]); return null;
 }
 
-if(GetQueryString('iframe')=='true'){
-	$(".sidebar-menu").remove();
-}
+// if(GetQueryString('iframe')=='true'){
+// 	$(".sidebar-menu").remove();
+// }
