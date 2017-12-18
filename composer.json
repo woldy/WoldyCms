@@ -3,14 +3,14 @@
     "description": "a newbility cms framework for larvael",
     "license":"MIT",
     "keywords":["cms"],
-    "version":"0.0.3",
+    "version":"v0.0.3",
     "authors": [
         {
             "name": "woldy",
             "email": "king@woldy.net"
         }
     ],
-   "minimum-stability": "0.0.3",
+   "minimum-stability": "v0.0.3",
    "require":{
 
     },
