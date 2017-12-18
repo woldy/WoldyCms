@@ -6,10 +6,10 @@
 		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
 		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
 		<div class="sidebar-menu toggle-others fixed">
-			@include('woldycms::xenon.common.sidebar')	
+			@include('woldycms::xenon.common.sidebar')
 		</div>
 		<div class="main-content">
-			@include($template)	
+			@include($template)
 			@include('woldycms::xenon.common.footer')
 		</div>
 		@include('woldycms::xenon.common.chat')
