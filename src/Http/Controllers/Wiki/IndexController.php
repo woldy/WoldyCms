@@ -13,7 +13,11 @@ class IndexController extends Controller
 		$mWiki=new BasicModel('wcms_wiki');
 		$wiki=$mWiki->where('name',$name)->orderby('id','desc')->first();
 		if(empty($wiki)){
-			return Redirect::to('/wiki/edit/'.$name);	
+			if(empty(Input::All())){
+				return Redirect::to('/wiki/edit/'.$name);
+			}else{
+				return Redirect::to('/wiki/edit/'.$name."?".http_build_query(Input::All()));
+			}
 		}else{
 			$wiki=$wiki->toArray();
 		}
