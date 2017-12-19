@@ -18,7 +18,7 @@ $(".iframe a").each(function(){
 
 $(".iframe a").click(function(){
 	$(".main-content").css('padding','0');
-	$(".main-content").html('<iframe width="100%" height="100%" src="'+$(this).attr('url')+'iframe=true"></iframe>');
+	$(".main-content").html('<iframe width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" src="'+$(this).attr('url')+'iframe=true"></iframe>');
 })
 
 
