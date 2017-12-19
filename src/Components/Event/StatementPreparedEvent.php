@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Components\Cache;
+namespace Woldy\Cms\Components\Event;
 use Illuminate\Cache\Events\KeyWritten;
 use Cache;
 class WriteEvent{
@@ -28,7 +28,7 @@ class WriteEvent{
           'minutes'=>$event->minutes,
           'tags'=>implode(';',$event->tags)
       ];
- 
+
       foreach ($cache_list as $idx=>$cache) {
         if($cache['created_at']+$cache['minutes']*60<time()){
           unset($cache_list[$idx]);

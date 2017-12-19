@@ -24,8 +24,9 @@ class TplServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['tpl'] = $this->app->share(function ($app) {
-            return new \Woldy\Cms\Components\Util\Tpl($app['config']);
-        });
+      $this->app->singleton('tpl', function ($app) {
+          return new \Woldy\Cms\Components\Util\Tpl($app['config']);
+      });
+
     }
 }

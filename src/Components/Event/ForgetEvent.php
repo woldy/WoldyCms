@@ -1,5 +1,5 @@
 <?php
-namespace Woldy\Cms\Components\Cache;
+namespace Woldy\Cms\Components\Event;
 use Illuminate\Cache\Events\KeyForgotten;
 use Cache;
 class ForgetEvent{
@@ -22,7 +22,7 @@ class ForgetEvent{
     $cache_list=Cache::get('cache_list');
     $cache_tag_list=Cache::get('cache_tag_list');
 
-    unset($cache_list[$event->key]);  
+    unset($cache_list[$event->key]);
 
     foreach ($event->tags as $tag) {
       unset($cache_tag_list[$tag][$event->key]);
