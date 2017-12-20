@@ -4,7 +4,7 @@ use Woldy\Cms\Components\Form\Element\Native;
 use Woldy\Cms\Components\Form\Element\Advanced;
 use Woldy\Cms\Components\Form\Element\Masks;
 use Woldy\Cms\Components\Form\Element\Misc;
-
+use Woldy\Cms\Components\Form\Element\Editor;
 use DB;
 use Request;
 class Form{
@@ -77,6 +77,14 @@ class Form{
 
     public function endform(){
         $this->html.=Native::endform();
+
+        $script='';
+        foreach ($this->js_list as $js) {
+           $script.="<script src='{$js}'></script>";
+        }
+
+        $this->html=$script.$this->html;
+
         return $this;        
     }
 
@@ -127,6 +135,16 @@ class Form{
 
     public function select($config){
         $this->html.=Native::select($config);
+        return $this; 
+    }
+
+    //--------------
+    
+    public function ueditor($config){
+                 $this->js_list[]='/assets/woldycms/js/common/ueditor/ueditor.config.js';
+        $this->js_list[]='/assets/woldycms/js/common/ueditor/ueditor.all.min.js';
+
+        $this->html.=Editor::ueditor($config);
         return $this; 
     }
 
