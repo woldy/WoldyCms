@@ -33,7 +33,8 @@ function GetQueryString(name)
 if (self != top) {
 	$(".sidebar-menu").remove();
 	$("a").each(function(){
-		if($(this).attr('href')!=''){
+		if(typeof($(this).attr('href'))!='undefined' && $(this).attr('href')!=''){
+			//console.log($(this).attr('href'));
 			if($(this).attr('href').indexOf('?')>0){
 				$(this).attr('href',$(this).attr('href')+'&iframe=true');
 			}else{

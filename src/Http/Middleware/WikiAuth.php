@@ -24,7 +24,7 @@ class WikiAuth
     public function handle($request, Closure $next, $guard = null)
     {
 
-        if ($request->session()->has('user')) {
+        if ($request->session()->has('user') && !empty($request->session()->get('user'))) {
             return $next($request);
         }else{
             $login_url=Setting::get('login_url');
