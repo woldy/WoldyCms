@@ -33,7 +33,7 @@
 			email: $("#email").val(),
 			nickname: $("#nickname").val(),
 			phone: $("#phone").val(),
-			password: $("#password").val(),
+			password: $("#password1").val(),
 			verify: $("#verify").val(),
 			_token:token
 		},
