@@ -25,6 +25,7 @@ class wCmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerCommands();
         $this->app->register(\Woldy\Cms\Http\RouteServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\TplServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\EventServiceProvider::class);//缓存没法管，先不加了
@@ -42,5 +43,17 @@ class wCmsServiceProvider extends ServiceProvider
             $loader->alias('Debugbar','\Barryvdh\Debugbar\Facade');
             $loader->alias('Captcha','\Mews\Captcha\Facades\Captcha');
        });
+
+    }
+
+    /**
+     * Register the make:seed generator.
+     */
+    private function registerCommands()
+    {
+        $this->app->singleton('command.wcms.test', function ($app) {
+            return $app['Woldy\Cms\Commands\TestCommand'];
+        });
+        $this->commands('command.wcms.test');
     }
 }
