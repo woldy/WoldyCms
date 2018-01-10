@@ -3,17 +3,18 @@
     "description": "a newbility cms framework for larvael",
     "license":"MIT",
     "keywords":["cms"],
-    "version":"1.0.2",
+    "version":"1.0.3",
     "authors": [
         {
             "name": "woldy",
             "email": "king@woldy.net"
         }
     ],
+   "minimum-stability": "dev",
    "require":{
         "barryvdh/laravel-debugbar": "^2.3",
-        "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "php": ">=7.0.1",
+        "laravel/framework": ">=5.3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"
