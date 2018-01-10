@@ -10,8 +10,9 @@
             "email": "king@woldy.net"
         }
     ],
+   "minimum-stability": "dev",
    "require":{
-      "php": ">=7.0.1"
+      
     },
     "autoload":{
         "psr-4":{
