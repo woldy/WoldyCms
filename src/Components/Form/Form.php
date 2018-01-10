@@ -28,6 +28,15 @@ class Form{
         return $form;
     }
 
+    public static function Element($type,$item=[]){
+      $form=new Form();
+      $item['class']=isset($item['class'])?$item['class']:'';
+      $method=$type;
+      $form->$method($item);
+      $result=$form->script().$form->get();
+      return $result;
+    }
+
     public static function build($config){
         $form=new Form();
         $formConfig=$config[0];
@@ -70,7 +79,7 @@ class Form{
     }
 
     public function form($config){
- 
+
         $this->html.=Native::form($config);
         return $this;
     }
@@ -78,14 +87,19 @@ class Form{
     public function endform(){
         $this->html.=Native::endform();
 
-        $script='';
-        foreach ($this->js_list as $js) {
-           $script.="<script src='{$js}'></script>";
-        }
 
-        $this->html=$script.$this->html;
 
-        return $this;        
+        $this->html=$this->script().$this->html;
+
+        return $this;
+    }
+
+    public function script(){
+      $script='<script>var csrf_token="'.csrf_token().'";</script>';
+      foreach ($this->js_list as $js) {
+         $script.="<script src='{$js}'></script>";
+      }
+      return $script;
     }
 
 
@@ -96,56 +110,56 @@ class Form{
     //
     public function separator(){
         $this->html.=Native::separator();
-        return $this;         
+        return $this;
     }
     public function text($config){
         $this->html.=Native::text($config);
-        return $this; 
+        return $this;
     }
 
     public function iSwitch($config){
         $this->html.=Native::iSwitch($config);
-        return $this; 
+        return $this;
     }
 
     public function button($config){
         $this->html.=Native::button($config);
-        return $this;         
+        return $this;
     }
 
     public function submit($config){
         $this->html.=Native::submit($config);
-        return $this;         
+        return $this;
     }
 
     public function textarea($config){
         $this->html.=Native::textarea($config);
-        return $this;         
+        return $this;
     }
 
     public function hidden($config){
         $this->html.=Native::hidden($config);
-        return $this;         
+        return $this;
     }
 
     public function file($config){
         $this->html.=Native::file($config);
-        return $this; 
+        return $this;
     }
 
     public function select($config){
         $this->html.=Native::select($config);
-        return $this; 
+        return $this;
     }
 
     //--------------
-    
+
     public function ueditor($config){
-                 $this->js_list[]='/assets/woldycms/js/common/ueditor/ueditor.config.js';
+        $this->js_list[]='/assets/woldycms/js/common/ueditor/ueditor.config.js';
         $this->js_list[]='/assets/woldycms/js/common/ueditor/ueditor.all.min.js';
 
         $this->html.=Editor::ueditor($config);
-        return $this; 
+        return $this;
     }
 
 }

@@ -74,3 +74,5 @@ Route::group(['middleware' => ['\Woldy\Cms\Http\Middleware\WikiAuth::class']], f
 });
 
 Route::post('/plugin/upload/pic', 'Plugin\UploadController@mdpic');
+Route::get('/plugin/upload/ueditor', 'Plugin\UploadController@ueditor');
+Route::post('/plugin/upload/ueditor', 'Plugin\UploadController@ueditor');

@@ -5,7 +5,7 @@ class Editor{
 
 
 	public static function ueditor($config=['attr'=>[]]){
-		$attr=Form::attr($config['attr']);
+		$attr=Form::attr($config['attr']??'');
 		$label=isset($config['label'])?$config['label']:'';
 		$html='	<div class=\"form-group \" ><script id="'.($config['attr']['id']??'ueditor').'" name="content" type="text/plain"></script></div>
 		    <script type="text/javascript">
@@ -14,6 +14,7 @@ class Editor{
         			initialFrameHeight:"600"
         		});
    			 </script>
+
     		';
 		return $html;
 	}
