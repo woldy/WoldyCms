@@ -3,16 +3,15 @@
     "description": "a newbility cms framework for larvael",
     "license":"MIT",
     "keywords":["cms"],
-    "version":"v0.0.3",
+    "version":"1.0.1",
     "authors": [
         {
             "name": "woldy",
             "email": "king@woldy.net"
         }
     ],
-   "minimum-stability": "dev",
    "require":{
-
+      "php": ">=7.0.1"
     },
     "autoload":{
         "psr-4":{
@@ -20,4 +19,3 @@
         }
     }
 }
- 
