@@ -274,7 +274,7 @@ CREATE TABLE `wcms_setting` (
 -- ----------------------------
 INSERT INTO `wcms_setting` VALUES ('1', 'login_url', '/auth/user/login', '登录地址');
 INSERT INTO `wcms_setting` VALUES ('2', 'admin_login_url', '/auth/admin/login', '管理员登录地址');
-INSERT INTO `wcms_setting` VALUES ('3', 'site_title', '牧佐影像', '网站标题');
+INSERT INTO `wcms_setting` VALUES ('3', 'site_title', 'WCMS', '网站标题');
 INSERT INTO `wcms_setting` VALUES ('4', 'guest_name', '匿名者', '游客名称');
 INSERT INTO `wcms_setting` VALUES ('5', 'logout_url', '/auth/logout', '退出地址');
 
