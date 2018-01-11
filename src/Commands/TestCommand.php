@@ -1,6 +1,7 @@
 <?php
 namespace Woldy\Cms\Commands;
 use Illuminate\Console\Command;
+use DB;
 // use Illuminate\Container\Container;
 // use Illuminate\Filesystem\Filesystem;
 // use Laracasts\Generators\Migrations\NameParser;
@@ -30,7 +31,14 @@ class TestCommand extends Command
 
     public function handle()
     {
-        echo "hello woldy!\n";
+        $file_path=__DIR__.'/../resources/wcms.sql';
+        $sql=explode(";",file_get_contents($file_path));
+        array_pop($sql);//干掉最后一行
+        $c=count($sql);
+        for($i=0;$i<count($sql);$i++) {
+          DB::statement($sql[$i]);
+          echo "importing data ".($i+1)."/$c\r";
+        }
+        echo "\ndone!\n";
     }
-
 }

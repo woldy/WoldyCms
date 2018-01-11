@@ -31,7 +31,7 @@ class Tpl{
 
 	//获取模板配置
 	public static function getconf($option){
-		$conf=self::$config->get('tpl.'.$option);
+		$conf=self::$config->get('wcms.'.$option);
 		return $conf;
 	}
 

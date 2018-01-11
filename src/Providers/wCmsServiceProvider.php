@@ -6,8 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Tpl;
 class wCmsServiceProvider extends ServiceProvider
 {
-
-
     /**
      * Bootstrap the application services.
      *
@@ -16,6 +14,8 @@ class wCmsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/../views', 'woldycms');
+        $configPath=__DIR__.'/../resources/wcms.php';
+        $this->publishes([$configPath => config_path('wcms.php')],'wcms');
     }
 
     /**
@@ -30,7 +30,7 @@ class wCmsServiceProvider extends ServiceProvider
         $this->app->register(\Woldy\Cms\Providers\TplServiceProvider::class);
         $this->app->register(\Woldy\Cms\Providers\EventServiceProvider::class);//缓存没法管，先不加了
 	      $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
-        if(config('tpl')['common_cfg']['cache_monitor']??false){
+        if(config('wcms')['common_cfg']['cache_monitor']??false){
             $this->app->register(\Mews\Captcha\CaptchaServiceProvider::class);
         }
         $this->app->booting(function(){
